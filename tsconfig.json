@@ -7,6 +7,20 @@
     "noEmit": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "strict": true
+    "noImplicitAny": false,
+    "strict": true,
+    "baseUrl": "./",
+    "paths": {
+      "Components/*": ["src/components/*"],
+      "ReduxStore/*": ["src/store/*"],
+      "Screens/*": ["src/screens/*"],
+      "Constants/*": ["src/constants/*"],
+      "Navigation/*": ["src/store/navigation/*"],
+      "Firestore/*": ["src/firestore/*"],
+      "Assets/*": ["src/assets/*"],
+      "Styles/*": ["src/styles/*"],
+      "b3runtime/src/*": ["src/*"],
+      "Root/*": ["*"],
+    },
   }
 }

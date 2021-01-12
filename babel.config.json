@@ -1,0 +1,25 @@
+{
+    "presets": ["babel-preset-expo"],
+    "plugins": [
+      [
+        "module-resolver",
+        {
+          "alias": {
+            "b3runtime/reduxStore": "./src/store",
+            "b3runtime/screens": "./src/screens",
+            "b3runtime/components": "./src/components",
+            "b3runtime/constants": "./src/constants",
+            "b3runtime/navigation": "./src/navigation",
+            "b3runtime/firebase": "./src/firebase",
+            "b3runtime/firestore": "./src/firestore",
+            "b3runtime/utils": "./src/utils",
+            "b3runtime/assets": "./assets",
+            "b3runtime/styles": "./src/styles",
+            "b3runtime/src": "./src",
+            "b3runtime/root": "./"
+          },
+          "extensions": [".ts", ".tsx", ".ios.js", ".android.js"]
+        }
+      ]
+    ]
+}

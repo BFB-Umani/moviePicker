@@ -27,6 +27,18 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "hooks": {
+      "postPublish": [
+        {
+          "file": "sentry-expo/upload-sourcemaps",
+          "config": {
+            "organization": "moviebuffs",
+            "project": "moviepicker",
+            "authToken": "5f15b5a5a13e427e95a9634b5d83ca4fb8d094f78f084ddfa5311273b49061df"
+          }
+        }
+      ]
     }
   }
 }
