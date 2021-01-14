@@ -1,7 +1,7 @@
-import ContentText from "b3runtime/components/ContentText/ContentText";
-import Icon from "b3runtime/components/Icon/Icon";
-import { IconType } from "b3runtime/components/Icon/Icon.types";
-import { spacing } from "b3runtime/styles/spacing";
+import ContentText from "moviepicker/components/ContentText/ContentText";
+import Icon from "moviepicker/components/Icon/Icon";
+import { IconType } from "moviepicker/components/Icon/Icon.types";
+import { spacing } from "moviepicker/styles/spacing";
 import React from "react";
 import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 import styled from "styled-components/native";

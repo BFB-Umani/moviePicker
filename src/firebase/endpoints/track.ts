@@ -3,7 +3,7 @@ import {
   ICompetition,
   IQuestionOption,
   ITrack,
-} from "b3runtime/reduxStore/store.types";
+} from "moviepicker/reduxStore/store.types";
 
 import firebase, { firebaseCollections, firestore } from "..";
 import { B3RuntimeAPI } from "../api.types";

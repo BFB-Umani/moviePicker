@@ -5,22 +5,13 @@ import {
   NavigationState,
 } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
-import DashboardScreen from "b3runtime/screens/Dashboard/DashboardScreen";
-import EditProfileScreen from "b3runtime/screens/EditProfile/EditProfileScreen";
-import FindCompetitionScreen from "b3runtime/screens/FindCompetition/FindCompetitionScreen";
-import FreerunScreen from "b3runtime/screens/Freerun/FreerunScreen";
-import GameSettingsScreen from "b3runtime/screens/GameSettings/GameSettingsScreen";
-import IngameScreen from "b3runtime/screens/Ingame/IngameScreen";
-import LandingScreen from "b3runtime/screens/LandingScreen/LandingScreen";
-import LoginScreen from "b3runtime/screens/Login/LoginScreen";
-import MyResultsScreen from "b3runtime/screens/MyResults/MyResultsScreen";
-import PostGameScreen from "b3runtime/screens/PostGame/PostGameScreen";
-import ProfileScreen from "b3runtime/screens/Profile/ProfileScreen";
-import ResetPasswordScreen from "b3runtime/screens/ResetPassword/ResetPasswordScreen";
-import SignupScreen from "b3runtime/screens/Signup/SignupScreen";
-import TrackSelectScreen from "b3runtime/screens/TrackSelect/TrackSelectScreen";
-import UserSettingsScreen from "b3runtime/screens/UserSettings/UserSettingsScreen";
-import React from "react";
+import EditProfileScreen from "moviepicker/screens/EditProfile/EditProfileScreen";
+import LandingScreen from "moviepicker/screens/LandingScreen/LandingScreen";
+import LoginScreen from "moviepicker/screens/Login/LoginScreen";
+import MyResultsScreen from "moviepicker/screens/MyResults/MyResultsScreen";
+import ProfileScreen from "moviepicker/screens/Profile/ProfileScreen";
+import ResetPasswordScreen from "moviepicker/screens/ResetPassword/ResetPasswordScreen";
+import SignupScreen from "moviepicker/screens/Signup/SignupScreen";
 import { Host } from "react-native-portalize";
 
 import BottomTabBar from "./BottomTabBar/BottomTabBar";

@@ -1,10 +1,10 @@
-import { colors } from "b3runtime/styles/colors";
+import { colors } from "moviepicker/styles/colors";
 import {
   borderRadius,
   generateMarginProps,
   spacing,
-} from "b3runtime/styles/spacing";
-import { fontSize, typography } from "b3runtime/styles/typography";
+} from "moviepicker/styles/spacing";
+import { fontSize, typography } from "moviepicker/styles/typography";
 import { Text, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 

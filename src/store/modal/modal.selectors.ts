@@ -1,4 +1,4 @@
-import { IModal, IReduxState } from "b3runtime/reduxStore/store.types";
+import { IModal, IReduxState } from "moviepicker/reduxStore/store.types";
 import { createSelector } from "reselect";
 
 const currentModal = createSelector(

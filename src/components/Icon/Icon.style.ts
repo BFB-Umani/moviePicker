@@ -1,6 +1,6 @@
 import { FontAwesome5 } from "@expo/vector-icons";
-import { colors } from "b3runtime/styles/colors";
-import { generateMarginProps } from "b3runtime/styles/spacing";
+import { colors } from "moviepicker/styles/colors";
+import { generateMarginProps } from "moviepicker/styles/spacing";
 import { View, TouchableOpacity } from "react-native";
 import styled from "styled-components/native";
 

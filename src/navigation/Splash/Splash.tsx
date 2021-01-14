@@ -1,7 +1,7 @@
-import Box from "b3runtime/components/Box/Box";
-import ContentText from "b3runtime/components/ContentText/ContentText";
-import { colors } from "b3runtime/styles/colors";
-import { spacing } from "b3runtime/styles/spacing";
+import Box from "moviepicker/components/Box/Box";
+import ContentText from "moviepicker/components/ContentText/ContentText";
+import { colors } from "moviepicker/styles/colors";
+import { spacing } from "moviepicker/styles/spacing";
 import React from "react";
 import { ActivityIndicator, Animated } from "react-native";
 import styled from "styled-components/native";

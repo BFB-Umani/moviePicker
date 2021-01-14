@@ -1,6 +1,6 @@
-import Icon from "b3runtime/components/Icon/Icon";
-import { spacing } from "b3runtime/styles/spacing";
-import { fontSize } from "b3runtime/styles/typography";
+import Icon from "moviepicker/components/Icon/Icon";
+import { spacing } from "moviepicker/styles/spacing";
+import { fontSize } from "moviepicker/styles/typography";
 import React, { useRef, useState } from "react";
 import {
   NativeSyntheticEvent,

@@ -1,4 +1,4 @@
-import { IconType } from "b3runtime/components/Icon/Icon.types";
+import { IconType } from "moviepicker/components/Icon/Icon.types";
 
 export interface IInputField {
   label?: string;

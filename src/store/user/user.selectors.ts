@@ -1,4 +1,4 @@
-import { IReduxState } from "b3runtime/reduxStore/store.types";
+import { IReduxState } from "moviepicker/reduxStore/store.types";
 import { createSelector } from "reselect";
 
 import { generateRequestStateSelectors } from "../requestState";

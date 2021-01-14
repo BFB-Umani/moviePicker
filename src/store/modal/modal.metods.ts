@@ -1,4 +1,4 @@
-import { IModal } from "b3runtime/reduxStore/store.types";
+import { IModal } from "moviepicker/reduxStore/store.types";
 import { Dispatch } from "redux";
 
 import { modalReduxSlice } from "./modal";

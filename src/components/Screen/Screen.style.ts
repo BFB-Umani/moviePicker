@@ -2,8 +2,8 @@ import {
   colors,
   ColorType,
   getColorWithOpacity,
-} from "b3runtime/styles/colors";
-import { spacing, SpacingSize } from "b3runtime/styles/spacing";
+} from "moviepicker/styles/colors";
+import { spacing, SpacingSize } from "moviepicker/styles/spacing";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import styled from "styled-components/native";
 

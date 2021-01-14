@@ -1,4 +1,4 @@
-import { TextAlign } from "b3runtime/styles/typography";
+import { TextAlign } from "moviepicker/styles/typography";
 
 export type ContentTextType =
   | "body"

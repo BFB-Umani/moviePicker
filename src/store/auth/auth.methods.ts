@@ -1,11 +1,9 @@
-import firebase, { firebaseAuth } from "b3runtime/firebase";
+import firebase, { firebaseAuth } from "moviepicker/firebase";
 import * as Google from "expo-google-app-auth";
 import { Dispatch } from "redux";
 
 import { alertReduxSlice } from "../alert/alert";
 import alertMethods from "../alert/alert.methods";
-import { ingameReduxSlice } from "../ingame/ingame";
-import ingameSelectors from "../ingame/ingame.selectors";
 import { addRequestState } from "../requestState";
 import { IReduxState } from "../store.types";
 import { userReduxSlice } from "../user/user";

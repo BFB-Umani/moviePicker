@@ -1,5 +1,5 @@
-import { IResult } from "b3runtime/reduxStore/store.types";
-import { spacing } from "b3runtime/styles/spacing";
+import { IResult } from "moviepicker/reduxStore/store.types";
+import { spacing } from "moviepicker/styles/spacing";
 import * as dateFns from "date-fns";
 import React from "react";
 import { View } from "react-native";

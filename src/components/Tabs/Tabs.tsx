@@ -1,5 +1,5 @@
-import ContentText from "b3runtime/components/ContentText/ContentText";
-import { WithMarginProps } from "b3runtime/styles/spacing";
+import ContentText from "moviepicker/components/ContentText/ContentText";
+import { WithMarginProps } from "moviepicker/styles/spacing";
 import React, { useState } from "react";
 
 import * as Style from "./Tabs.style";

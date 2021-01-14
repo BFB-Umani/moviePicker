@@ -1,6 +1,6 @@
-import { IAlert } from "b3runtime/reduxStore/store.types";
-import { colors } from "b3runtime/styles/colors";
-import { spacing } from "b3runtime/styles/spacing";
+import { IAlert } from "moviepicker/reduxStore/store.types";
+import { colors } from "moviepicker/styles/colors";
+import { spacing } from "moviepicker/styles/spacing";
 import styled from "styled-components/native";
 
 export const Container = styled.TouchableOpacity<IAlert>`

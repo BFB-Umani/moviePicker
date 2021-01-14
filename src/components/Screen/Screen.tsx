@@ -1,9 +1,9 @@
 import { useNavigation } from "@react-navigation/native";
-import ContentText from "b3runtime/components/ContentText/ContentText";
-import { IconType } from "b3runtime/components/Icon/Icon.types";
-import HeaderNavigationItem from "b3runtime/navigation/HeaderNavigationItem/HeaderNavigationItem";
-import { colors, ColorType } from "b3runtime/styles/colors";
-import { SpacingSize } from "b3runtime/styles/spacing";
+import ContentText from "moviepicker/components/ContentText/ContentText";
+import { IconType } from "moviepicker/components/Icon/Icon.types";
+import HeaderNavigationItem from "moviepicker/navigation/HeaderNavigationItem/HeaderNavigationItem";
+import { colors, ColorType } from "moviepicker/styles/colors";
+import { SpacingSize } from "moviepicker/styles/spacing";
 import React, { useEffect } from "react";
 import reactFastCompare from "react-fast-compare";
 import {

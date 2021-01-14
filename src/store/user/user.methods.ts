@@ -2,9 +2,9 @@ import firebase, {
   firebaseStorage,
   firestore,
   firebaseCollections,
-} from "b3runtime/firebase";
-import { B3RuntimeAPI } from "b3runtime/firebase/api.types";
-import Utils from "b3runtime/utils";
+} from "moviepicker/firebase";
+import { B3RuntimeAPI } from "moviepicker/firebase/api.types";
+import Utils from "moviepicker/utils";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";

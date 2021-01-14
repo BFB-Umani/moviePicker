@@ -1,4 +1,4 @@
-import { WithMarginProps } from "b3runtime/styles/spacing";
+import { WithMarginProps } from "moviepicker/styles/spacing";
 import React from "react";
 import { TouchableOpacityProps } from "react-native";
 

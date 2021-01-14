@@ -1,7 +1,7 @@
-import { IModal } from "b3runtime/reduxStore/store.types";
-import { colors } from "b3runtime/styles/colors";
-import { borderRadius, spacing } from "b3runtime/styles/spacing";
-import { fontSize, typography } from "b3runtime/styles/typography";
+import { IModal } from "moviepicker/reduxStore/store.types";
+import { colors } from "moviepicker/styles/colors";
+import { borderRadius, spacing } from "moviepicker/styles/spacing";
+import { fontSize, typography } from "moviepicker/styles/typography";
 import { Text, View } from "react-native";
 import ReactNativeModal from "react-native-modal";
 import styled from "styled-components/native";

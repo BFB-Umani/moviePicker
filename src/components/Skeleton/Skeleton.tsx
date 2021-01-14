@@ -1,11 +1,11 @@
-import { colors, WithColorProps } from "b3runtime/styles/colors";
+import { colors, WithColorProps } from "moviepicker/styles/colors";
 import {
   generateMarginProps,
   generatePaddingProps,
   WithMarginProps,
   WithPaddingProps,
-} from "b3runtime/styles/spacing";
-import { fontSize, FontSize } from "b3runtime/styles/typography";
+} from "moviepicker/styles/spacing";
+import { fontSize, FontSize } from "moviepicker/styles/typography";
 import React from "react";
 import { Animated } from "react-native";
 import styled from "styled-components/native";

@@ -1,5 +1,5 @@
-import { ColorType } from "b3runtime/styles/colors";
-import { WithMarginProps } from "b3runtime/styles/spacing";
+import { ColorType } from "moviepicker/styles/colors";
+import { WithMarginProps } from "moviepicker/styles/spacing";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 

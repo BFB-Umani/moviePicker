@@ -1,10 +1,10 @@
-import { generateColorProps, WithColorProps } from "b3runtime/styles/colors";
+import { generateColorProps, WithColorProps } from "moviepicker/styles/colors";
 import {
   generateMarginProps,
   generatePaddingProps,
   WithMarginProps,
   WithPaddingProps,
-} from "b3runtime/styles/spacing";
+} from "moviepicker/styles/spacing";
 import React from "react";
 import { View } from "react-native";
 import styled from "styled-components/native";

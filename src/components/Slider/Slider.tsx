@@ -1,5 +1,5 @@
 import ReactSlider from "@react-native-community/slider";
-import { colors, ColorType } from "b3runtime/styles/colors";
+import { colors, ColorType } from "moviepicker/styles/colors";
 import React from "react";
 
 interface Props {

@@ -1,4 +1,4 @@
-import { ColorType } from "b3runtime/styles/colors";
+import { ColorType } from "moviepicker/styles/colors";
 
 import { IconType } from "../Icon/Icon.types";
 

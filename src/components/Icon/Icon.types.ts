@@ -1,5 +1,5 @@
-import { ColorType } from "b3runtime/styles/colors";
-import { FontSize } from "b3runtime/styles/typography";
+import { ColorType } from "moviepicker/styles/colors";
+import { FontSize } from "moviepicker/styles/typography";
 
 export interface IIcon {
   icon: IconType;

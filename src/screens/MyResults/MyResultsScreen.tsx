@@ -1,14 +1,12 @@
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import Box from "b3runtime/components/Box/Box";
-import ContentText from "b3runtime/components/ContentText/ContentText";
-import Icon from "b3runtime/components/Icon/Icon";
-import ResultFeed from "b3runtime/components/ResultFeed/ResultFeed";
-import Screen from "b3runtime/components/Screen/Screen";
-import { IProfileStack } from "b3runtime/navigation/Navigation.types";
-import resultMethods from "b3runtime/reduxStore/result/result.methods";
-import resultSelectors from "b3runtime/reduxStore/result/result.selectors";
-import { IReduxState, IResult } from "b3runtime/reduxStore/store.types";
+import Box from "moviepicker/components/Box/Box";
+import ContentText from "moviepicker/components/ContentText/ContentText";
+import Icon from "moviepicker/components/Icon/Icon";
+import ResultFeed from "moviepicker/components/ResultFeed/ResultFeed";
+import Screen from "moviepicker/components/Screen/Screen";
+import { IProfileStack } from "moviepicker/navigation/Navigation.types";
+import { IReduxState, IResult } from "moviepicker/reduxStore/store.types";
 import React, { useEffect } from "react";
 import { connect } from "react-redux";
 

@@ -1,6 +1,6 @@
-import ContentText from "b3runtime/components/ContentText/ContentText";
-import Icon from "b3runtime/components/Icon/Icon";
-import { IAlert } from "b3runtime/reduxStore/store.types";
+import ContentText from "moviepicker/components/ContentText/ContentText";
+import Icon from "moviepicker/components/Icon/Icon";
+import { IAlert } from "moviepicker/reduxStore/store.types";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 

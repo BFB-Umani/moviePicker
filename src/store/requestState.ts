@@ -4,7 +4,7 @@ import {
   Dispatch,
   PayloadAction,
 } from "@reduxjs/toolkit";
-import Utils from "b3runtime/utils/index";
+import Utils from "moviepicker/utils/index";
 
 import { IReduxState, IRequestProps } from "./store.types";
 

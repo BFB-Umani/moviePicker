@@ -1,5 +1,5 @@
-import { colors } from "b3runtime/styles/colors";
-import { typography } from "b3runtime/styles/typography";
+import { colors } from "moviepicker/styles/colors";
+import { typography } from "moviepicker/styles/typography";
 import React from "react";
 import { Text } from "react-native";
 import styled from "styled-components/native";

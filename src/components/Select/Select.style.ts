@@ -1,6 +1,6 @@
-import { colors } from "b3runtime/styles/colors";
-import { spacing } from "b3runtime/styles/spacing";
-import { fontSize, typography } from "b3runtime/styles/typography";
+import { colors } from "moviepicker/styles/colors";
+import { spacing } from "moviepicker/styles/spacing";
+import { fontSize, typography } from "moviepicker/styles/typography";
 import { Text, TouchableOpacity, View } from "react-native";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome5";
 import styled from "styled-components/native";

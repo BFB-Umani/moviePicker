@@ -1,7 +1,7 @@
-import Modal from "b3runtime/components/Modal/Modal";
-import modalMethods from "b3runtime/reduxStore/modal/modal.metods";
-import modalSelectors from "b3runtime/reduxStore/modal/modal.selectors";
-import { IModal, IReduxState } from "b3runtime/reduxStore/store.types";
+import Modal from "moviepicker/components/Modal/Modal";
+import modalMethods from "moviepicker/reduxStore/modal/modal.metods";
+import modalSelectors from "moviepicker/reduxStore/modal/modal.selectors";
+import { IModal, IReduxState } from "moviepicker/reduxStore/store.types";
 import React from "react";
 import { connect } from "react-redux";
 

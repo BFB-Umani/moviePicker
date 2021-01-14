@@ -1,5 +1,5 @@
-import modalMethods from "b3runtime/reduxStore/modal/modal.metods";
-import { IModal } from "b3runtime/reduxStore/store.types";
+import modalMethods from "moviepicker/reduxStore/modal/modal.metods";
+import { IModal } from "moviepicker/reduxStore/store.types";
 import React, { useEffect, useRef, useState } from "react";
 import { Modalize } from "react-native-modalize";
 import { Portal } from "react-native-portalize";

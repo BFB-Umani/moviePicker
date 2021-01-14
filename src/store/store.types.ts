@@ -1,6 +1,6 @@
-import { IButton } from "b3runtime/components/Button/Button.types";
-import { IconType } from "b3runtime/components/Icon/Icon.types";
-import { ColorType } from "b3runtime/styles/colors";
+import { IButton } from "moviepicker/components/Button/Button.types";
+import { IconType } from "moviepicker/components/Icon/Icon.types";
+import { ColorType } from "moviepicker/styles/colors";
 import * as Notifications from "expo-notifications";
 
 import { IAlertReduxState } from "./alert/alert.types";

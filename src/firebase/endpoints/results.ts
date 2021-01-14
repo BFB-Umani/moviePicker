@@ -3,7 +3,7 @@ import {
   IUserProfile,
   IResult,
   ISaveResultProps,
-} from "b3runtime/reduxStore/store.types";
+} from "moviepicker/reduxStore/store.types";
 import * as dateFns from "date-fns";
 
 import { B3RuntimeAPI } from "../api.types";

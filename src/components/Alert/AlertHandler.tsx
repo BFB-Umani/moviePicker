@@ -1,7 +1,7 @@
-import Alert from "b3runtime/components/Alert/Alert";
-import alertMethods from "b3runtime/reduxStore/alert/alert.methods";
-import alertSelectors from "b3runtime/reduxStore/alert/alert.selectors";
-import { IAlert, IReduxState } from "b3runtime/reduxStore/store.types";
+import Alert from "moviepicker/components/Alert/Alert";
+import alertMethods from "moviepicker/reduxStore/alert/alert.methods";
+import alertSelectors from "moviepicker/reduxStore/alert/alert.selectors";
+import { IAlert, IReduxState } from "moviepicker/reduxStore/store.types";
 import React from "react";
 import { SafeAreaView, View } from "react-native";
 import { connect } from "react-redux";

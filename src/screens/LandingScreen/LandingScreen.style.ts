@@ -1,4 +1,4 @@
-import { colors } from "b3runtime/styles/colors";
+import { colors } from "moviepicker/styles/colors";
 import styled from "styled-components/native";
 
 export const Wrapper = styled.View`

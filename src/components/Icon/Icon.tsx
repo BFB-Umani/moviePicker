@@ -1,5 +1,5 @@
-import { WithMarginProps } from "b3runtime/styles/spacing";
-import { fontSize } from "b3runtime/styles/typography";
+import { WithMarginProps } from "moviepicker/styles/spacing";
+import { fontSize } from "moviepicker/styles/typography";
 import React from "react";
 import { TouchableOpacityProps } from "react-native";
 

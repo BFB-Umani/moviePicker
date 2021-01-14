@@ -1,4 +1,4 @@
-import { ColorType } from "b3runtime/styles/colors";
+import { ColorType } from "moviepicker/styles/colors";
 
 export interface ITabs {
   tabs: ITabItem[];

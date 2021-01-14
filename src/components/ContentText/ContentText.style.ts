@@ -1,6 +1,6 @@
-import { colors, generateColorProps } from "b3runtime/styles/colors";
-import { generateMarginProps } from "b3runtime/styles/spacing";
-import { fontSize, typography } from "b3runtime/styles/typography";
+import { colors, generateColorProps } from "moviepicker/styles/colors";
+import { generateMarginProps } from "moviepicker/styles/spacing";
+import { fontSize, typography } from "moviepicker/styles/typography";
 import { Text } from "react-native";
 import styled from "styled-components/native";
 

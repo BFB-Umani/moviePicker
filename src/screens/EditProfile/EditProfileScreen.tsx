@@ -1,26 +1,26 @@
 import { yupResolver } from "@hookform/resolvers/yup";
 import { StackScreenProps } from "@react-navigation/stack";
-import Alert from "b3runtime/components/Alert/Alert";
-import Avatar from "b3runtime/components/Avatar/Avatar";
-import Box from "b3runtime/components/Box/Box";
-import Button from "b3runtime/components/Button/Button";
-import ContentText from "b3runtime/components/ContentText/ContentText";
-import InputField from "b3runtime/components/InputField/InputField";
-import Screen from "b3runtime/components/Screen/Screen";
-import Separator from "b3runtime/components/Separator/Separator";
+import Alert from "moviepicker/components/Alert/Alert";
+import Avatar from "moviepicker/components/Avatar/Avatar";
+import Box from "moviepicker/components/Box/Box";
+import Button from "moviepicker/components/Button/Button";
+import ContentText from "moviepicker/components/ContentText/ContentText";
+import InputField from "moviepicker/components/InputField/InputField";
+import Screen from "moviepicker/components/Screen/Screen";
+import Separator from "moviepicker/components/Separator/Separator";
 import {
   AuthorizedBottomTabStack,
   IProfileStack,
-} from "b3runtime/navigation/Navigation.types";
-import modalMethods from "b3runtime/reduxStore/modal/modal.metods";
+} from "moviepicker/navigation/Navigation.types";
+import modalMethods from "moviepicker/reduxStore/modal/modal.metods";
 import {
   IError,
   IModal,
   IReduxState,
   IUserProfile,
-} from "b3runtime/reduxStore/store.types";
-import userMethods from "b3runtime/reduxStore/user/user.methods";
-import userSelectors from "b3runtime/reduxStore/user/user.selectors";
+} from "moviepicker/reduxStore/store.types";
+import userMethods from "moviepicker/reduxStore/user/user.methods";
+import userSelectors from "moviepicker/reduxStore/user/user.selectors";
 import React, { useMemo, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Modalize } from "react-native-modalize";

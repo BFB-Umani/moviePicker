@@ -1,5 +1,4 @@
 import ModalHandler from "moviepicker/components/Modal/ModalHandler";
-import PushNotificationHandler from "moviepicker/components/PushNotificationHandler/PushNotificationHandler";
 import alertMethods from "moviepicker/reduxStore/alert/alert.methods";
 import { IAlert, IReduxState } from "moviepicker/reduxStore/store.types";
 import React, { useEffect, useState } from "react";
@@ -47,32 +46,6 @@ const MoviePicker: React.FunctionComponent<IStateProps & IDispatchProps> = (
       AppState.removeEventListener("change", _handleAppStateChange);
     };
   }, []);
-
-  useEffect(() => {
-    if (props.gameIsOngoing && props.authState === "LOGGED_IN") {
-      props.createAlert({
-        id: "resumegame-alert",
-        icon: "stopwatch",
-        text:
-          "You have a game currently in progress. Click here to continue playing.",
-        color: "warning",
-        onClick: () => {
-          navigationRef.current?.navigate("Ingame", {
-            screen: "Ingame",
-            params: {
-              trackId: props.currentTrackId,
-            },
-          });
-        },
-      });
-    }
-    if (
-      !props.gameIsOngoing &&
-      props.alertList.find((a) => a.id === "resumegame-alert")
-    ) {
-      props.closeAlert("resumegame-alert");
-    }
-  }, [props.gameIsOngoing, props.authState]);
 
   return (
     <>

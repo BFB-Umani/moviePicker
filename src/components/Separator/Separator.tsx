@@ -1,5 +1,5 @@
-import { colors, ColorType } from "b3runtime/styles/colors";
-import { generateMarginProps, WithMarginProps } from "b3runtime/styles/spacing";
+import { colors, ColorType } from "moviepicker/styles/colors";
+import { generateMarginProps, WithMarginProps } from "moviepicker/styles/spacing";
 import React from "react";
 import styled from "styled-components/native";
 

@@ -1,5 +1,5 @@
-import { colors, ColorType } from "b3runtime/styles/colors";
-import { generateMarginProps, spacing } from "b3runtime/styles/spacing";
+import { colors, ColorType } from "moviepicker/styles/colors";
+import { generateMarginProps, spacing } from "moviepicker/styles/spacing";
 import styled from "styled-components/native";
 
 import { ITabs } from "./Tabs.types";

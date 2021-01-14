@@ -1,6 +1,6 @@
-import Button from "b3runtime/components/Button/Button";
-import { IModal } from "b3runtime/reduxStore/store.types";
-import { colors } from "b3runtime/styles/colors";
+import Button from "moviepicker/components/Button/Button";
+import { IModal } from "moviepicker/reduxStore/store.types";
+import { colors } from "moviepicker/styles/colors";
 import React from "react";
 
 import * as ModalStyle from "./Modal.style";
