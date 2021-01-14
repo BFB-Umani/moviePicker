@@ -5,18 +5,18 @@
         "module-resolver",
         {
           "alias": {
-            "b3runtime/reduxStore": "./src/store",
-            "b3runtime/screens": "./src/screens",
-            "b3runtime/components": "./src/components",
-            "b3runtime/constants": "./src/constants",
-            "b3runtime/navigation": "./src/navigation",
-            "b3runtime/firebase": "./src/firebase",
-            "b3runtime/firestore": "./src/firestore",
-            "b3runtime/utils": "./src/utils",
-            "b3runtime/assets": "./assets",
-            "b3runtime/styles": "./src/styles",
-            "b3runtime/src": "./src",
-            "b3runtime/root": "./"
+            "moviepicker/reduxStore": "./src/store",
+            "moviepicker/screens": "./src/screens",
+            "moviepicker/components": "./src/components",
+            "moviepicker/constants": "./src/constants",
+            "moviepicker/navigation": "./src/navigation",
+            "moviepicker/firebase": "./src/firebase",
+            "moviepicker/firestore": "./src/firestore",
+            "moviepicker/utils": "./src/utils",
+            "moviepicker/assets": "./assets",
+            "moviepicker/styles": "./src/styles",
+            "moviepicker/src": "./src",
+            "moviepicker/root": "./"
           },
           "extensions": [".ts", ".tsx", ".ios.js", ".android.js"]
         }

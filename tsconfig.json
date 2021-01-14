@@ -11,16 +11,17 @@
     "strict": true,
     "baseUrl": "./",
     "paths": {
-      "Components/*": ["src/components/*"],
-      "ReduxStore/*": ["src/store/*"],
-      "Screens/*": ["src/screens/*"],
-      "Constants/*": ["src/constants/*"],
-      "Navigation/*": ["src/store/navigation/*"],
-      "Firestore/*": ["src/firestore/*"],
-      "Assets/*": ["src/assets/*"],
-      "Styles/*": ["src/styles/*"],
-      "b3runtime/src/*": ["src/*"],
-      "Root/*": ["*"],
+      "moviepicker/components/*": ["src/components/*"],
+      "moviepicker/reduxStore/*": ["./src/store/*"],
+      "moviepicker/screens/*": ["src/screens/*"],
+      "moviepicker/constants/*": ["src/constants/*"],
+      "moviepicker/navigation/*": ["src/navigation/*"],
+      "moviepicker/firestore/*": ["src/firestore/*"],
+      "moviepicker/assets/*": ["assets/*"],
+      "moviepicker/styles/*": ["src/styles/*"],
+      "moviepicker/src/*": ["src/*"],
+      "moviepicker/root/*": ["*"],
     },
-  }
+  },
+  "files:": ["./custom.d.ts"]
 }

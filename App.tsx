@@ -1,11 +1,16 @@
-import React, { useState } from "react";
+import React, {useEffect, useState } from "react";
 
-import { YellowBox } from "react-native";
+import { LogBox } from "react-native";
+
+import ReduxStore from "moviepicker/reduxStore/store";
+import MoviePicker from "./src/index";
 
 import { AppLoading } from "expo";
+import * as SplashScreen from "expo-splash-screen";
 import * as Sentry from 'sentry-expo';
 import * as Font from "expo-font";
-import { Text, View } from 'react-native';
+import { Provider } from "react-redux";
+
 
 Sentry.init({
   dsn: 'https://82c229e94a8b42249ba178e4fdcff077@o499968.ingest.sentry.io/5579092',
@@ -22,33 +27,51 @@ const fetchFonts = () =>
     "work-sans-bold": require("./assets/fonts/WorkSans-Bold.ttf"),
   });
 
-YellowBox.ignoreWarnings(["Setting a timer"]);
+// Workaround for expo/firebase bug that shows a error message from inside firebase.
+// https://stackoverflow.com/questions/44603362/setting-a-timer-for-a-long-period-of-time-i-e-multiple-minutes/48778011
+LogBox.ignoreLogs(["Setting a timer"]);
 const _console = { ...console };
 console.warn = (message) => {
-  if (message.indexOf("Setting a timer") <= -1) {
+  if (message && message.indexOf && message.indexOf("Setting a timer") <= -1) {
     _console.warn(message);
   }
 };
 
-  const App = () => {
-    const [fontLoaded, setFontLoaded] = useState(false);
-  
-    if (!fontLoaded) {
-      return (
-        <AppLoading
-          startAsync={fetchFonts}
-          onFinish={() => {
-            setFontLoaded(true);
-          }}
-        />
-      );
+const App = () => {
+  const [appReady, setAppReady] = useState(false);
+
+  useEffect(() => {
+    initializeResources();
+  }, []);
+
+  const initializeResources = async () => {
+    // Prevent native splash screen from autohiding
+    try {
+      await SplashScreen.preventAutoHideAsync();
+      await Font.loadAsync({
+        "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
+        "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
+        "open-sans-semiBold": require("./assets/fonts/OpenSans-SemiBold.ttf"),
+        "work-sans": require("./assets/fonts/WorkSans-Regular.ttf"),
+        "work-sans-bold": require("./assets/fonts/WorkSans-Bold.ttf"),
+      });
+    } catch (e) {
+      console.warn(e);
+    } finally {
+      await SplashScreen.hideAsync();
+      setAppReady(true);
     }
-    
+  };
+
+  if (!appReady) {
+    return null;
+  }
+
   return (
-      <View>
-        <Text>Open up App.tsx to start working on your app!</Text>
-      </View>
+    <Provider store={ReduxStore.store}>
+        <MoviePicker />
+    </Provider>
   );
-}
+};
 
 export default App;

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "898136067668",
+    "project_id": "moviepicker-42d4d",
+    "storage_bucket": "moviepicker-42d4d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898136067668:android:c7e79264c621db029de7c1",
+        "android_client_info": {
+          "package_name": "com.MovieBuffs.MoviePicker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898136067668-9hj9b9qdic2dsh9ghn1vln9ema9le90k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyClhvm1OiPGh-xmN8MtCzu58TQgYuiB3Ik"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898136067668-9hj9b9qdic2dsh9ghn1vln9ema9le90k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,15 +5,9 @@ import * as Notifications from "expo-notifications";
 
 import { IAlertReduxState } from "./alert/alert.types";
 import { IAuthReduxState } from "./auth/auth.types";
-import { ICompetitionReduxState } from "./competition/competition.types";
-import { IFreerunReduxState } from "./freerun/freerun.types";
 import { IGlobalReduxState } from "./global/global.types";
-import { IIngameReduxState } from "./ingame/ingame.types";
 import { IModalReduxState } from "./modal/modal.types";
-import { IPushNotificationsReduxState } from "./pushNotifications/pushnotifications.types";
 import { IRequestStateRedux } from "./requestState";
-import { IResultReduxState } from "./result/result.types";
-import { ISettingsReduxState } from "./settings/settings.types";
 import { IUserReduxState } from "./user/user.types";
 
 export interface IReduxState {
@@ -23,12 +17,6 @@ export interface IReduxState {
   user: IUserReduxState;
   modal: IModalReduxState;
   alert: IAlertReduxState;
-  pushNotifications: IPushNotificationsReduxState;
-  competition: ICompetitionReduxState;
-  settings: ISettingsReduxState;
-  ingame: IIngameReduxState;
-  freerun: IFreerunReduxState;
-  result: IResultReduxState;
 }
 
 export interface IError {
