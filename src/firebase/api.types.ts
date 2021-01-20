@@ -1,14 +1,12 @@
 export type FirebaseCollections =
-  | "attendees"
   | "categories"
-  | "competitions"
-  | "questions"
-  | "results"
-  | "tracks"
+  | "movies"
+  | "user_lists"
   | "user_accounts"
-  | "checkpoints";
+  | "creators"
+  | "contributers";
 
-export namespace B3RuntimeAPI {
+export namespace MoviePickerAPI {
   export interface UserData {
     id: string;
     firstName: string;
@@ -18,97 +16,53 @@ export namespace B3RuntimeAPI {
     email: string;
   }
 
-  export interface Checkpoint {
+  export interface Movie {
     id: string;
-    label: string;
-    latitude: number;
-    longitude: number;
-    order: number;
-    penalty?: boolean;
-    questionKey?: string;
+    poster_path: string;
+    title: string;
+    release_date: string;
+    vote_average: number;
   }
 
-  export interface Question {
+  export interface Movie_List {
     id: string;
-    categoryKey: string;
-    text: string;
-    imgUrl: string;
-    correctAnswer: string;
-    options: QuestionOption[];
+    list: Omit<Movie, "id">[];
+    creator: Creator;
+    contributer: Contributer;
   }
 
-  export interface QuestionOption {
-    option: string;
-    text: string;
-    imgUrl?: string;
+  export interface NewList {
+    startedTime: number;
+    creator: NewCreator;
+    contributer?: NewContributer;
+    list: Omit<Movie, "id">[];
   }
 
-  export interface Competition {
+  export interface Creator {
     id: string;
     name: string;
-    date: string;
-    active: boolean;
-    showFutureMarkers: boolean;
-    trackKeys: string[];
-  }
-
-  export interface Track {
-    name: string;
-    categoryKey: string;
-    isComplete: boolean;
-  }
-
-  export interface Category {
-    id: string;
-  }
-
-  export interface Result {
-    id: string;
-    totalTime: number | null;
-    startedTime: number;
-    attendee: Attendee;
-    results: ResultData[];
-    lastUpdated?: {
-      seconds: number;
-      nanoseconds: number;
-    };
-  }
-  export interface NewResult {
-    totalTime: number;
-    startedTime: number;
-    attendee: NewAttendee;
-    results: Omit<B3RuntimeAPI.ResultData, "id">[];
-  }
-
-  export interface ResultData {
-    id: string;
-    answeredCorrect: boolean;
-    completed: boolean;
-    completedTime: number;
-    label: string | null;
-    latitude: number;
-    longitude: number;
-    order: number;
-    penalty: boolean;
-    questionKey: string | null;
-    skipped: boolean;
-  }
-
-  export interface Attendee {
-    id: string;
+    listKey: string;
+    listName?: string;
     userAccountKey: string;
-    email: string;
-    name: string;
-    competitionKey: string;
-    competitionName: string;
-    trackKey: string;
-    trackName: string;
   }
-  export interface NewAttendee {
-    competitionKey: string;
-    competitionName?: string;
-    trackKey: string;
-    trackName?: string;
+
+  export interface NewCreator {
+    listKey: string;
+    listName?: string;
+    userAccountKey: string;
+  }
+  
+  export interface Contributer {
+    id: string;
+    name: string;
+    listKey: string;
+    listName?: string;
+    userAccountKey: string;
+  }
+
+  export interface NewContributer {
+    listKey: string;
+    listName?: string;
     userAccountKey: string;
   }
 }

@@ -1,3 +1,4 @@
+import React from "react";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import ForestImg from "moviepicker/assets/images/forest.jpg";
@@ -11,7 +12,7 @@ import { UnauthorizedNavigationStack } from "moviepicker/navigation/Navigation.t
 import authMethods from "moviepicker/reduxStore/auth/auth.methods";
 import authSelectors from "moviepicker/reduxStore/auth/auth.selectors";
 import { IError, IReduxState } from "moviepicker/reduxStore/store.types";
-import React from "react";
+import Utils from "moviepicker/utils/index";
 import { SafeAreaView } from "react-native";
 import { connect } from "react-redux";
 
@@ -96,14 +97,10 @@ const LandingScreen: React.FC<Props> = (props) => {
 };
 
 interface IStateProps {
-  gameIsOngoing: boolean;
-  currentTrackId?: string;
   isLoginGoogleLoading?: boolean;
   loginGoogleError?: IError;
 }
 const mapStateToProps = (state: IReduxState): IStateProps => ({
-  gameIsOngoing: ingameSelectors.gameIsOngoingSelector(state),
-  currentTrackId: ingameSelectors.currentTrackIdSelector(state),
   isLoginGoogleLoading: authSelectors.loginGoogleStateSelector.isLoading(state),
   loginGoogleError: authSelectors.loginGoogleStateSelector.error(state),
 });

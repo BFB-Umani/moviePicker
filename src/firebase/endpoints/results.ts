@@ -4,16 +4,15 @@ import {
   IResult,
   ISaveResultProps,
 } from "moviepicker/reduxStore/store.types";
-import * as dateFns from "date-fns";
 
-import { B3RuntimeAPI } from "../api.types";
+import { MoviePickerAPI } from "../api.types";
 import { firebaseCollections, firestore } from "../index";
 import { logAPIError } from "../utils";
 
-export const getResult = async (resultId: IResult["id"]) => {
+export const getLists = async (resultId: IResult["id"]) => {
   try {
     const response = await firestore
-      .collection(firebaseCollections.results)
+      .collection(firebaseCollections.user_lists)
       .where("attendee.id", "==", resultId)
       .get();
 
@@ -21,29 +20,27 @@ export const getResult = async (resultId: IResult["id"]) => {
       throw Error("Result does not exist");
     }
 
-    return response.docs[0].data() as B3RuntimeAPI.Result;
+    return response.docs[0].data() as MoviePickerAPI.Movie_List;
   } catch (error) {
     logAPIError({
       origin: "results",
-      methodName: "getResult",
+      methodName: "getLists",
       error,
     });
   }
 };
 
-export const getResultsByUser = async (userId: IUserProfile["id"]) => {
+export const getListByUser = async (userId: IUserProfile["id"]) => {
   try {
     const response = await firestore
-      .collection(firebaseCollections.results)
-      .where("attendee.userAccountKey", "==", userId)
+      .collection(firebaseCollections.user_lists)
+      .where("creator.userAccountKey", "==", userId)
       .get();
 
-    const results: B3RuntimeAPI.Result[] = [];
+    const results: MoviePickerAPI.Movie_List[] = [];
     for (const doc of response.docs) {
-      const entry = doc.data() as B3RuntimeAPI.Result;
-      if (entry.totalTime) {
-        results.push(entry);
-      }
+      const entry = doc.data() as MoviePickerAPI.Movie_List;
+      results.push(entry);
     }
     return results;
   } catch (error) {
@@ -55,33 +52,7 @@ export const getResultsByUser = async (userId: IUserProfile["id"]) => {
   }
 };
 
-export const getResultsByTrack = async (trackId: ITrack["id"]) => {
-  try {
-    const response = await firestore
-      .collection(firebaseCollections.results)
-      .where("attendee.trackKey", "==", trackId)
-      .where("totalTime", ">", 0)
-      .orderBy("totalTime")
-      .get();
-
-    const results: B3RuntimeAPI.Result[] = [];
-    for (const doc of response.docs) {
-      const entry = doc.data() as B3RuntimeAPI.Result;
-      if (entry.totalTime) {
-        results.push(entry);
-      }
-    }
-    return results;
-  } catch (error) {
-    logAPIError({
-      origin: "results",
-      methodName: "getResultsByUser",
-      error,
-    });
-  }
-};
-
-export const createResult = async (data: ISaveResultProps) => {
+/*export const createResult = async (data: ISaveResultProps) => {
   try {
     // TODO: This information should be stored in the result-entry, and not as a separate collection
     // Create an attendee-object
@@ -99,7 +70,7 @@ export const createResult = async (data: ISaveResultProps) => {
 
     // TODO: The database structure needs to be refactored...
     const resultData: Omit<
-      B3RuntimeAPI.ResultData,
+      MoviePickerAPI.ResultData,
       "id"
     >[] = data.visitedCheckpoints.map((checkpoint) => {
       const relatedAnswer = data.questionAnswers.find(
@@ -120,7 +91,7 @@ export const createResult = async (data: ISaveResultProps) => {
       };
     });
 
-    const newResult: B3RuntimeAPI.NewResult = {
+    const newResult: MoviePickerAPI.NewResult = {
       attendee,
       results: resultData,
       // TODO: Consider storing time in date/time stirngs instead of miliseconds
@@ -138,7 +109,7 @@ export const createResult = async (data: ISaveResultProps) => {
     return {
       id: response.id,
       ...newResult,
-    } as B3RuntimeAPI.Result;
+    } as MoviePickerAPI.Result;
   } catch (error) {
     logAPIError({
       origin: "results",
@@ -147,22 +118,43 @@ export const createResult = async (data: ISaveResultProps) => {
     });
   }
 };
+*/
 
-export const createAttendee = async (
-  attendeeData: B3RuntimeAPI.NewAttendee
+export const createCreator = async (
+  creatorData: MoviePickerAPI.NewCreator
 ) => {
   try {
-    const newAttendee = await firestore
-      .collection(firebaseCollections.attendees)
-      .add(attendeeData);
+    const newCreator = await firestore
+      .collection(firebaseCollections.creators)
+      .add(creatorData);
     return {
-      id: newAttendee.id,
-      ...attendeeData,
-    } as B3RuntimeAPI.NewAttendee;
+      id: newCreator.id,
+      ...creatorData,
+    } as MoviePickerAPI.NewCreator;
   } catch (error) {
     logAPIError({
       origin: "results",
-      methodName: "createAttendee",
+      methodName: "createCreator",
+      error,
+    });
+  }
+};
+
+export const createContributer = async (
+  contributerData: MoviePickerAPI.NewContributer
+) => {
+  try {
+    const newContributer = await firestore
+      .collection(firebaseCollections.contributers)
+      .add(contributerData);
+    return {
+      id: newContributer.id,
+      ...contributerData,
+    } as MoviePickerAPI.NewContributer;
+  } catch (error) {
+    logAPIError({
+      origin: "results",
+      methodName: "createContributer",
       error,
     });
   }

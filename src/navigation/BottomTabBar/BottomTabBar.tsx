@@ -1,9 +1,9 @@
+import React from "react";
 import { BottomTabBarProps } from "@react-navigation/bottom-tabs";
 import AlertHandler from "moviepicker/components/Alert/AlertHandler";
 import { IconType } from "moviepicker/components/Icon/Icon.types";
 import { AuthorizedBottomTabStack } from "moviepicker/navigation/Navigation.types";
 import { colors } from "moviepicker/styles/colors";
-import React from "react";
 import { SafeAreaView, View } from "react-native";
 import styled from "styled-components/native";
 

@@ -1,5 +1,4 @@
 import firebase, { firebaseAuth } from "moviepicker/firebase";
-import * as Google from "expo-google-app-auth";
 import { Dispatch } from "redux";
 
 import { alertReduxSlice } from "../alert/alert";
@@ -41,17 +40,7 @@ const checkAuthenticationState = () => async (
       if (!user) {
         throw Error("Not logged in");
       }
-
       dispatch(authReduxSlice.actions.loginSuccess(user.uid));
-
-      // Check if the user has a game in progress, otherwise make sure to clean the state
-      const hasAnOngoingGame = ingameSelectors.gameIsOngoingSelector(
-        getState()
-      );
-      if (!hasAnOngoingGame) {
-        dispatch(ingameReduxSlice.actions.resetState());
-      }
-
       await userMethods.fetchCurrentUserProfile()(dispatch, getState);
     } catch (e) {
       // We ended up here because there was an error or that the user isn't logged in
@@ -101,87 +90,10 @@ const loginCredentials = (credentials: ILoginCredentials) => async (
   }
 };
 
-const loginGoogle = () => async (
-  dispatch: Dispatch,
-  getState: () => IReduxState
-) => {
-  try {
-    addRequestState({
-      name: "loginGoogle",
-      state: "LOADING",
-    })(dispatch);
-    // Login to Google and retrieve the necessary tokens
-    const googleLoginResponse = await Google.logInAsync({
-      androidClientId:
-        "792814669342-jv82g4o0u9l65r0498qpe6754g33td3r.apps.googleusercontent.com",
-      iosClientId:
-        "792814669342-j8lvfe55kemrk97ocoagvtkqbec2mfhg.apps.googleusercontent.com",
-      androidStandaloneAppClientId:
-        "792814669342-a2jm536hpaj6i0uk4in91i27ruimogii.apps.googleusercontent.com",
-      iosStandaloneAppClientId:
-        "792814669342-j8lvfe55kemrk97ocoagvtkqbec2mfhg.apps.googleusercontent.com",
-      scopes: ["profile", "email"],
-    });
-    // If the login at Google was interrupted
-    if (googleLoginResponse.type !== "success") {
-      throw Error("Google login was cancelled");
-    }
-    // Retrieve credentials based on Google tokens we got from the previous step
-    const googleCredentials = await firebase.auth.GoogleAuthProvider.credential(
-      googleLoginResponse.idToken,
-      googleLoginResponse.accessToken
-    );
-    // Login
-    const loginResponse = await firebaseAuth.signInWithCredential(
-      googleCredentials
-    );
-    // The user does not exist
-    if (!loginResponse.user) {
-      throw Error("User not found");
-    }
-
-    // Check if the user has a profile
-    const userExist = await userMethods.fetchUserProfile(
-      loginResponse.user.uid
-    )(dispatch);
-    if (!userExist) {
-      // If there is no profile, we need to set one up
-      userMethods.createUserProfile({
-        id: loginResponse.user.uid,
-        email: loginResponse.user.email || undefined,
-      });
-    }
-
-    // All done!
-    addRequestState({
-      name: "loginGoogle",
-      state: "COMPLETE",
-    })(dispatch);
-  } catch (error) {
-    const formattedError = error.code
-      ? formatFirebaseErrors(error.code)
-      : error.toString();
-
-    alertMethods.createAlert({
-      text: formattedError,
-      color: "danger",
-      icon: "exclamation-circle",
-      closable: true,
-      closeAfter: 5000,
-    })(dispatch, getState);
-    addRequestState({
-      name: "loginGoogle",
-      state: "ERROR",
-      error: { message: formattedError, stack: error },
-    })(dispatch);
-  }
-};
-
 const logout = () => async (dispatch: Dispatch) => {
   try {
     await firebaseAuth.signOut();
     dispatch(userReduxSlice.actions.resetState());
-    dispatch(ingameReduxSlice.actions.resetState());
     dispatch(alertReduxSlice.actions.clearAll());
   } catch (error) {
     addRequestState({
@@ -212,7 +124,7 @@ const requestResetPassword = (email: string) => async (dispatch: Dispatch) => {
   }
 };
 
-const signup = (fields: ISignupFields) => async (dispatch: Dispatch) => {
+const signup = (fields: ISignupFields) => async (dispatch: Dispatch, getState: () => IReduxState) => {
   try {
     // Make sure we have the necessary data
     if (!fields.email) {
@@ -245,6 +157,8 @@ const signup = (fields: ISignupFields) => async (dispatch: Dispatch) => {
       password: fields.password,
     })(dispatch);
 
+    await userMethods.fetchCurrentUserProfile()(dispatch, getState);
+
     addRequestState({
       name: "signup",
       state: "COMPLETE",
@@ -265,7 +179,6 @@ const signup = (fields: ISignupFields) => async (dispatch: Dispatch) => {
 export default {
   checkAuthenticationState,
   loginCredentials,
-  loginGoogle,
   logout,
   requestResetPassword,
   signup,

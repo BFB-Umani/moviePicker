@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { StackScreenProps } from "@react-navigation/stack";
 import Alert from "moviepicker/components/Alert/Alert";
@@ -11,7 +12,6 @@ import authMethods from "moviepicker/reduxStore/auth/auth.methods";
 import authSelectors from "moviepicker/reduxStore/auth/auth.selectors";
 import { ISignupFields } from "moviepicker/reduxStore/auth/auth.types";
 import { IError, IReduxState } from "moviepicker/reduxStore/store.types";
-import React, { useMemo } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
 import * as yup from "yup";

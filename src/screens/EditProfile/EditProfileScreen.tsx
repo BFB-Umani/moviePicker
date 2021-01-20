@@ -1,3 +1,4 @@
+import React, { useMemo, useRef } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { StackScreenProps } from "@react-navigation/stack";
 import Alert from "moviepicker/components/Alert/Alert";
@@ -21,7 +22,6 @@ import {
 } from "moviepicker/reduxStore/store.types";
 import userMethods from "moviepicker/reduxStore/user/user.methods";
 import userSelectors from "moviepicker/reduxStore/user/user.selectors";
-import React, { useMemo, useRef } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { Modalize } from "react-native-modalize";
 import { Portal } from "react-native-portalize";
@@ -53,12 +53,6 @@ const EditProfileScreen: React.FC<
           .string()
           .notRequired()
           .test("lastname", "Please enter a valid lastname", (value) =>
-            value ? yup.string().min(2).isValidSync(value) : true
-          ),
-        organization: yup
-          .string()
-          .notRequired()
-          .test("organization", "Must contain at least 2 characters", (value) =>
             value ? yup.string().min(2).isValidSync(value) : true
           ),
       }),

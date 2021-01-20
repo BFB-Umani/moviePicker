@@ -5,7 +5,6 @@ import { LogBox } from "react-native";
 import ReduxStore from "moviepicker/reduxStore/store";
 import MoviePicker from "./src/index";
 
-import { AppLoading } from "expo";
 import * as SplashScreen from "expo-splash-screen";
 import * as Sentry from 'sentry-expo';
 import * as Font from "expo-font";
@@ -17,15 +16,6 @@ Sentry.init({
   enableInExpoDevelopment: true,
   debug: true, // Sentry will try to print out useful debugging information if something goes wrong with sending an event. Set this to `false` in production.
 });
-
-const fetchFonts = () =>
-  Font.loadAsync({
-    "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
-    "open-sans-bold": require("./assets/fonts/OpenSans-Bold.ttf"),
-    "open-sans-semiBold": require("./assets/fonts/OpenSans-SemiBold.ttf"),
-    "work-sans": require("./assets/fonts/WorkSans-Regular.ttf"),
-    "work-sans-bold": require("./assets/fonts/WorkSans-Bold.ttf"),
-  });
 
 // Workaround for expo/firebase bug that shows a error message from inside firebase.
 // https://stackoverflow.com/questions/44603362/setting-a-timer-for-a-long-period-of-time-i-e-multiple-minutes/48778011

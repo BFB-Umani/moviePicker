@@ -1,8 +1,8 @@
+import React from "react";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import Icon from "moviepicker/components/Icon/Icon";
 import { IconType } from "moviepicker/components/Icon/Icon.types";
 import { spacing } from "moviepicker/styles/spacing";
-import React from "react";
 import { TouchableOpacity, TouchableOpacityProps } from "react-native";
 import styled from "styled-components/native";
 

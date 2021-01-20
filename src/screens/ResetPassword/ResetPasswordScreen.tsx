@@ -1,3 +1,4 @@
+import React, { useMemo } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { StackScreenProps } from "@react-navigation/stack";
 import Box from "moviepicker/components/Box/Box";
@@ -10,7 +11,6 @@ import { UnauthorizedNavigationStack } from "moviepicker/navigation/Navigation.t
 import authMethods from "moviepicker/reduxStore/auth/auth.methods";
 import authSelectors from "moviepicker/reduxStore/auth/auth.selectors";
 import { IReduxState } from "moviepicker/reduxStore/store.types";
-import React, { useMemo } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { connect } from "react-redux";
 import * as yup from "yup";

@@ -1,3 +1,4 @@
+import React from "react";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
 import ForestImg from "moviepicker/assets/images/forest.jpg";
@@ -12,7 +13,6 @@ import { IProfileStack } from "moviepicker/navigation/Navigation.types";
 import authMethods from "moviepicker/reduxStore/auth/auth.methods";
 import { IReduxState, IUserProfile } from "moviepicker/reduxStore/store.types";
 import userSelectors from "moviepicker/reduxStore/user/user.selectors";
-import React from "react";
 import { connect } from "react-redux";
 
 import * as Style from "./ProfileScreen.style";
@@ -79,12 +79,6 @@ const ProfileScreen: React.FC<Props> = (props) => {
             <Separator color="panel" size="lg" />
             <List
               items={[
-                {
-                  label: "Your Results",
-                  iconLeft: "trophy",
-                  iconRight: "chevron-right",
-                  onPress: navigateToResults,
-                },
                 {
                   label: "Settings",
                   iconLeft: "cog",

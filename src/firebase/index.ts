@@ -27,12 +27,10 @@ export const firestore = firebase.firestore();
 export const firebaseAuth = firebase.auth();
 export const firebaseStorage = firebase.storage();
 export const firebaseCollections: { [key in FirebaseCollections]: string } = {
-  attendees: "attendees",
   categories: "categories",
-  competitions: "competitions",
-  questions: "questions",
-  results: "results",
-  tracks: "tracks",
+  movies: "movies",
+  user_lists: "user_lists",
   user_accounts: "user_accounts",
-  checkpoints: "checkpoints",
+  creators: "creators",
+  contributers: "contributers",
 };

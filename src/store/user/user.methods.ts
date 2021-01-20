@@ -3,7 +3,7 @@ import firebase, {
   firestore,
   firebaseCollections,
 } from "moviepicker/firebase";
-import { B3RuntimeAPI } from "moviepicker/firebase/api.types";
+import { MoviePickerAPI } from "moviepicker/firebase/api.types";
 import Utils from "moviepicker/utils";
 import * as ImagePicker from "expo-image-picker";
 import * as Location from "expo-location";
@@ -86,14 +86,13 @@ const fetchUserProfile = (userId: string) => async (dispatch: Dispatch) => {
     } catch (e) {
       // The avatar could not be loaded
     } finally {
-      const userProfileData = response.docs[0].data() as B3RuntimeAPI.UserData;
+      const userProfileData = response.docs[0].data() as MoviePickerAPI.UserData;
       const userProfile: IUserProfile = {
         id: userProfileData.id,
         email: userProfileData.email,
         username: userProfileData.username,
         firstname: userProfileData.firstName,
         lastname: userProfileData.lastName,
-        organization: userProfileData.organization,
         avatarUrl,
       };
       return userProfile;
@@ -140,7 +139,6 @@ const createUserProfile = (profileData: IUserProfile) => async (
         email: profileData.email || null,
         firstName: profileData.firstname || null,
         lastName: profileData.lastname || null,
-        organization: profileData.organization || null,
         username: profileData.username || null,
       });
 
@@ -185,7 +183,6 @@ const updateUserProfile = (profileData: IEditUserProfile) => async (
         email: profileData.email || null,
         firstName: profileData.firstname || null,
         lastName: profileData.lastname || null,
-        organization: profileData.organization || null,
         username: profileData.username || null,
       });
 

@@ -9,6 +9,7 @@ import { IGlobalReduxState } from "./global/global.types";
 import { IModalReduxState } from "./modal/modal.types";
 import { IRequestStateRedux } from "./requestState";
 import { IUserReduxState } from "./user/user.types";
+import { ISettingsReduxState } from "./settings/settings.types";
 
 export interface IReduxState {
   global: IGlobalReduxState;
@@ -17,6 +18,7 @@ export interface IReduxState {
   user: IUserReduxState;
   modal: IModalReduxState;
   alert: IAlertReduxState;
+  settings: ISettingsReduxState;
 }
 
 export interface IError {

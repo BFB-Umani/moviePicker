@@ -1,8 +1,8 @@
+import React from "react";
 import Box from "moviepicker/components/Box/Box";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import { colors } from "moviepicker/styles/colors";
 import { spacing } from "moviepicker/styles/spacing";
-import React from "react";
 import { ActivityIndicator, Animated } from "react-native";
 import styled from "styled-components/native";
 
