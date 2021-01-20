@@ -1,4 +1,4 @@
-import modalMethods from "moviepicker/reduxStore/modal/modal.metods";
+import modalMethods from "moviepicker/reduxStore/modal/modal.methods";
 import { IModal } from "moviepicker/reduxStore/store.types";
 import React, { useEffect, useRef, useState } from "react";
 import { Modalize } from "react-native-modalize";

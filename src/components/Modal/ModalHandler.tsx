@@ -1,5 +1,5 @@
 import Modal from "moviepicker/components/Modal/Modal";
-import modalMethods from "moviepicker/reduxStore/modal/modal.metods";
+import modalMethods from "moviepicker/reduxStore/modal/modal.methods";
 import modalSelectors from "moviepicker/reduxStore/modal/modal.selectors";
 import { IModal, IReduxState } from "moviepicker/reduxStore/store.types";
 import React from "react";
