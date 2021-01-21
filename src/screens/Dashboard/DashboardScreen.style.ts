@@ -4,7 +4,7 @@ import { animated } from "react-spring";
 import styled from "styled-components/native";
 
 export const Wrapper = styled(SafeAreaView)`
-  background-color: ${colors.text.background};
+  background-color: ${colors.general.background};
   flex: 1;
 `;
 
@@ -18,9 +18,10 @@ export const Container = styled(View)`
 export const BackgroundImage = styled(Image)`
   position: absolute;
   height: 120%;
+  width: 100%;
   left: 0;
   top: 0;
-  opacity: 0.15;
+  opacity: 0.2;
 `;
 
 export const Logo = styled(animated(View))`

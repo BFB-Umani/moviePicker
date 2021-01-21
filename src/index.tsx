@@ -5,7 +5,7 @@ import { IAlert, IReduxState } from "moviepicker/reduxStore/store.types";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
 
-import Navigation, { navigationRef } from "./navigation/Navigation";
+import Navigation from "./navigation/Navigation";
 import alertSelectors from "./store/alert/alert.selectors";
 import authMethods from "./store/auth/auth.methods";
 import authSelectors from "./store/auth/auth.selectors";

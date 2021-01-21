@@ -25,9 +25,6 @@ const UserSettingsScreen: React.FC<
   const navigateToEditProfile = () => {
     props.navigation.navigate("EditProfile");
   };
-  const navigateToGameSettings = () => {
-    props.navigation.navigate("Competition", { screen: "GameSettings" });
-  };
 
   return (
     <Screen
@@ -44,6 +41,7 @@ const UserSettingsScreen: React.FC<
             label: "Edit Profile",
             onPress: navigateToEditProfile,
             iconRight: "chevron-right",
+            color: "text",
           },
         ]}
       />

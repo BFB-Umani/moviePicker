@@ -20,7 +20,7 @@ const Button: React.FC<IButton & TouchableOpacityProps & WithMarginProps> = ({
       <Icon
         icon={props.iconLeft}
         color={props.type}
-        colorVariant={!props.hollow ? "text" : "background"}
+        colorVariant={!props.hollow ? "background" : "text"}
         size="xxs"
         marginright="sm"
       />

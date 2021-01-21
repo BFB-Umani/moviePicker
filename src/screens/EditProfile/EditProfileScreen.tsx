@@ -128,14 +128,16 @@ const EditProfileScreen: React.FC<
             <Button
               size="small"
               label="Take picture"
-              type="text"
+              type="primary"
+              hollow={true}
               iconLeft="camera"
               onPress={onOpenCamera}
             />
             <Button
               size="small"
               label="Select from gallery"
-              type="text"
+              type="primary"
+              hollow={true}
               iconLeft="images"
               margintop="md"
               onPress={onOpenCameraRoll}
@@ -235,27 +237,6 @@ const EditProfileScreen: React.FC<
         </Box>
 
         <Separator color="panel" marginbottom="sm" size="md" />
-        <Box marginbottom="md">
-          <Controller
-            control={control}
-            render={({ onChange, onBlur, value }) => (
-              <InputField
-                placeholder="Organization"
-                label="Organization"
-                onBlur={onBlur}
-                onChangeText={(value) => onChange(value)}
-                value={value}
-                fullWidth={true}
-                type="email"
-                iconLeft="industry"
-                error={!!errors.organization}
-                errorMessage={errors.organization?.message}
-              />
-            )}
-            name="organization"
-            defaultValue=""
-          />
-        </Box>
       </Box>
 
       {formState.isSubmitted && props.updateProfileError && (

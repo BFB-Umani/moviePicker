@@ -29,16 +29,16 @@ export interface WithColorProps {
 }
 
 const colorPalette: { [key in ColorType]: string } = {
-  primary: "#fe2d7f",
-  secondary: "#0bcccb",
-  tertiary: "#3600CC",
-  general: "#ffffff",
-  panel: "#eeeeee",
+  primary: "#2bb2f5",
+  secondary: "#046fa4",
+  tertiary: "#5b059c",
+  general: "#303030",
+  panel: "#252525",
   danger: "#CC0C0C",
   success: "#088484",
   warning: "#F3DA90",
   info: "#5081AB",
-  text: "#111111",
+  text: "#eeeeee",
   disabled: "#999999",
 };
 
@@ -50,7 +50,7 @@ const generateColorSet = (color: string): IColorSet => ({
 });
 
 const getTextColorByBackground = (background: string) =>
-  tinycolor(background).isLight() ? colorPalette.text : colorPalette.general;
+  tinycolor(background).isLight() ? colorPalette.primary : colorPalette.text;
 
 const brightenColor = (color: string): IColorSet["brighter"] => {
   const newColor = tinycolor(color).brighten(20).toHex();

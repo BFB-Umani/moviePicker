@@ -5,19 +5,19 @@ import { Text } from "react-native";
 import styled from "styled-components/native";
 
 import Box from "../Box/Box";
-import B3Logo from "./B3Logo";
+import MoviepickerLogo from "./MoviepickerLogo";
 
 const LogoText = styled(Text)`
   font-family: ${typography.headingBold};
   font-size: 28px;
-  color: ${colors.general.background};
+  color: ${colors.text.background};
   text-align: center;
 `;
 
-const B3RuntimeLogo: React.FC<object> = (props) => (
+const MoviepickerLogoText: React.FC<object> = (props) => (
   <Box justifyContent="center" alignItems="center">
-    <B3Logo />
-    <LogoText>RUNTIME</LogoText>
+    <MoviepickerLogo />
+    <LogoText>MOVIEPICKER</LogoText>
   </Box>
 );
-export default B3RuntimeLogo;
+export default MoviepickerLogoText;

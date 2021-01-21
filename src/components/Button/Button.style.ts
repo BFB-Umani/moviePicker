@@ -19,7 +19,7 @@ const getButtonBgColor = (type: IButton["type"], hollow?: boolean) => {
 
 const getButtonTextColor = (type: IButton["type"], hollow?: boolean) => {
   if (type && colors[type]) {
-    return !hollow ? colors[type].text : colors[type].background;
+    return !hollow ? colors.general.text : colors[type].background;
   }
   return colors.primary.text;
 };

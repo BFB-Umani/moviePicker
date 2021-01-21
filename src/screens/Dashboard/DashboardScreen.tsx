@@ -1,7 +1,7 @@
 import React from "react";
 import { StackScreenProps } from "@react-navigation/stack";
-import ForestImg from "moviepicker/assets/images/forest.jpg";
-import B3RuntimeLogo from "moviepicker/components/B3RuntimeLogo/B3RuntimeLogo";
+import ForestImg from "moviepicker/assets/images/background.jpg";
+import MoviepickerLogo from "moviepicker/components/MoviepickerLogo/MoviepickerLogoText";
 import Box from "moviepicker/components/Box/Box";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import Screen from "moviepicker/components/Screen/Screen";
@@ -72,10 +72,10 @@ const DashboardScreen: React.FC<
               transform: [{ translateY: logoAnim.y }],
             }}
           >
-            <B3RuntimeLogo />
+            <MoviepickerLogo />
           </Style.Logo>
           <Box margintop="xxs">
-            <ContentText type="fineprint" textalign="center" color="secondary">
+            <ContentText type="fineprint" textalign="center" color="text">
               v{Utils.getAppVersion()}
             </ContentText>
           </Box>

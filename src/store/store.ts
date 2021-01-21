@@ -1,7 +1,5 @@
-import AsyncStorage from "@react-native-community/async-storage";
 import { createStore, combineReducers, applyMiddleware, Reducer } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import { persistStore, persistReducer } from "redux-persist";
 import thunk from "redux-thunk";
 
 import alertReducer from "./alert/alert";
@@ -23,29 +21,11 @@ const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   settings: settingsReducer,
 });
 
-const persistedReducer = persistReducer(
-  {
-    key: "root",
-    storage: AsyncStorage,
-    debug: false,
-    /* version: 0,
-    migrate: createMigrate({
-      0: (state: IReduxState) => ({
-        ...state,
-        ingame: ingameInitialState,
-      }),
-    }), */
-  },
-  rootReducer
-);
-
 const middlewares = [thunk];
 
 const store = createStore(
-  persistedReducer,
+  rootReducer,
   composeWithDevTools(applyMiddleware(...middlewares))
 );
 
-const persistor = persistStore(store);
-
-export default { store, persistor };
+export default { store };

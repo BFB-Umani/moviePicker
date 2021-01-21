@@ -1,4 +1,4 @@
-import { IAlert, IReduxState } from "b3runtime/reduxStore/store.types";
+import { IAlert, IReduxState } from "moviepicker/reduxStore/store.types";
 import { Dispatch } from "redux";
 
 import { alertReduxSlice } from "./alert";

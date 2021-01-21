@@ -1,7 +1,7 @@
 import React from "react";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import ForestImg from "moviepicker/assets/images/forest.jpg";
+import ForestImg from "moviepicker/assets/images/background.jpg";
 import Avatar from "moviepicker/components/Avatar/Avatar";
 import Box from "moviepicker/components/Box/Box";
 import ContentText from "moviepicker/components/ContentText/ContentText";
@@ -62,6 +62,7 @@ const ProfileScreen: React.FC<Props> = (props) => {
               {props.fullname && (
                 <ContentText
                   type="description"
+                  color="text"
                   textalign="center"
                   margintop="xxxs"
                 >
@@ -70,19 +71,13 @@ const ProfileScreen: React.FC<Props> = (props) => {
               )}
             </Box>
             <Separator color="panel" size="lg" />
-            <Box justifyContent="center" alignItems="center" padding="xxlg">
-              <Icon icon="chart-bar" color="disabled" marginbottom="xxs" />
-              <ContentText type="fineprint" color="disabled">
-                Here you will see your overall stats...
-              </ContentText>
-            </Box>
-            <Separator color="panel" size="lg" />
             <List
               items={[
                 {
                   label: "Settings",
                   iconLeft: "cog",
                   iconRight: "chevron-right",
+                  color: "text",
                   onPress: navigateToSettings,
                 },
               ]}

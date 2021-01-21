@@ -4,7 +4,10 @@
     "slug": "moviePicker",
     "version": "1.0.0",
     "privacy": "unlisted",
-    "platforms": ["ios", "android"],
+    "platforms": [
+      "ios",
+      "android"
+    ],
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -32,6 +35,9 @@
           }
         }
       ]
+    },
+    "android": {
+      "package": "com.movieBuffs.Moviepicker"
     }
   }
 }

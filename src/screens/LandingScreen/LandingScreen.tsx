@@ -1,9 +1,9 @@
 import React from "react";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import ForestImg from "moviepicker/assets/images/forest.jpg";
+import Background from "moviepicker/assets/images/background.jpg";
 import AlertHandler from "moviepicker/components/Alert/AlertHandler";
-import B3RuntimeLogo from "moviepicker/components/B3RuntimeLogo/B3RuntimeLogo";
+import MoviepickerLogoText from "moviepicker/components/MoviepickerLogo/MoviepickerLogoText";
 import Box from "moviepicker/components/Box/Box";
 import Button from "moviepicker/components/Button/Button";
 import ContentText from "moviepicker/components/ContentText/ContentText";
@@ -33,7 +33,7 @@ const LandingScreen: React.FC<Props> = (props) => {
 
   return (
     <Style.Wrapper>
-      <Style.BackgroundImage source={ForestImg} />
+      <Style.BackgroundImage source={Background} />
       <Screen
         header={{ hide: true, color: "primary" }}
         transparentBackground={true}
@@ -41,7 +41,7 @@ const LandingScreen: React.FC<Props> = (props) => {
         loadingText="Logging in..."
       >
         <Box flex={1} justifyContent="center" alignItems="center">
-          <B3RuntimeLogo />
+          <MoviepickerLogoText />
         </Box>
         <SafeAreaView>
           <Box paddingleft="sm" paddingright="sm" alignItems="center">
@@ -49,8 +49,7 @@ const LandingScreen: React.FC<Props> = (props) => {
               type="h4"
               marginbottom="sm"
               textalign="center"
-              color="primary"
-              colorVariant="text"
+              color="text"
             >
               Login
             </ContentText>
@@ -61,15 +60,6 @@ const LandingScreen: React.FC<Props> = (props) => {
               type="general"
               marginbottom="sm"
               onPress={navigateToLogin}
-            />
-            <Button
-              label="Google"
-              iconLeft="google"
-              iconRight="chevron-right"
-              type="text"
-              marginbottom="md"
-              disabled={props.isLoginGoogleLoading}
-              onPress={props.loginGoogle}
             />
             <Button
               label="Create an account"
@@ -83,8 +73,7 @@ const LandingScreen: React.FC<Props> = (props) => {
             <ContentText
               type="fineprint"
               textalign="center"
-              color="primary"
-              colorVariant="text"
+              color="general"
             >
               v{Utils.getAppVersion()}
             </ContentText>
