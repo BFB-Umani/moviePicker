@@ -19,8 +19,8 @@ export namespace MoviePickerAPI {
   export interface Movie {
     id: string;
     poster_path: string;
-    title: string;
     release_date: string;
+    title: string;
     vote_average: number;
   }
 

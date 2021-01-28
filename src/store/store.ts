@@ -7,6 +7,7 @@ import authReducer from "./auth/auth";
 import globalReducer from "./global/global";
 import modalReducer from "./modal/modal";
 import requestStateReducer from "./requestState";
+import movieSearchReducer from "./movieSearch/movieSearch"
 import { IReduxState } from "./store.types";
 import userReducer from "./user/user";
 import settingsReducer from "./settings/settings";
@@ -19,6 +20,7 @@ const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   modal: modalReducer,
   alert: alertReducer,
   settings: settingsReducer,
+  searchResult: movieSearchReducer,
 });
 
 const middlewares = [thunk];

@@ -18,7 +18,8 @@ export type ColorType =
   | "warning"
   | "info"
   | "text"
-  | "disabled";
+  | "disabled"
+  | "gold";
 
 type IColorTheme = { [key in ColorType]: IColorSet };
 
@@ -40,6 +41,7 @@ const colorPalette: { [key in ColorType]: string } = {
   info: "#5081AB",
   text: "#eeeeee",
   disabled: "#999999",
+  gold: "#f1c42c",
 };
 
 const generateColorSet = (color: string): IColorSet => ({
@@ -98,6 +100,7 @@ export const colors: IColorTheme = {
   info: generateColorSet(colorPalette.info),
   text: generateColorSet(colorPalette.text),
   disabled: generateColorSet(colorPalette.disabled),
+  gold: generateColorSet(colorPalette.gold),
 };
 
 export const generateColorProps = (

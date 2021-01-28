@@ -7,7 +7,7 @@ import { ActivityIndicator, Animated } from "react-native";
 import styled from "styled-components/native";
 
 const Container = styled(Box)`
-  background-color: ${colors.secondary.background};
+  background-color: ${colors.general.background};
 `;
 const LabelContainer = styled(Box)`
   background-color: ${colors.primary.background};
@@ -19,16 +19,15 @@ const LabelContainer = styled(Box)`
 
 const Splash: React.FC<object> = (props) => {
   const labelList = [
-    "Warming up...",
-    "Stretching...",
-    "Getting ready...",
-    "Tying shoelaces...",
-    "Calibrating GPS...",
-    "Getting dressed...",
-    "Doing jumping jacks...",
-    "Shuffling question cards...",
-    "Preparing penalty routes...",
-    "Practising winner poses...",
+    "Popping popcorn...",
+    "Preparing filmroll...",
+    "Pouring drinks...",
+    "Fetching snacks...",
+    "Checking tickets...",
+    "Getting blankets...",
+    "Starting projector...",
+    "Testing surround sound...",
+    "Cleaning lounge...",
   ];
 
   const labelAnimation = new Animated.Value(0);
@@ -72,8 +71,8 @@ const Splash: React.FC<object> = (props) => {
           <ContentText
             type="h6"
             textalign="center"
-            color="primary"
-            colorVariant="text"
+            color="general"
+            colorVariant="background"
           >
             {labelList[Math.floor(Math.random() * labelList.length)]}
           </ContentText>

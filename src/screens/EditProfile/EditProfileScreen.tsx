@@ -42,7 +42,7 @@ const EditProfileScreen: React.FC<
         email: yup.string().email("Invalid email address"),
         username: yup
           .string()
-          .min(3, "Your username contain at least 3 characters"),
+          .min(3, "Your username must contain at least 3 characters"),
         firstname: yup
           .string()
           .notRequired()

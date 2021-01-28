@@ -10,6 +10,7 @@ import { IModalReduxState } from "./modal/modal.types";
 import { IRequestStateRedux } from "./requestState";
 import { IUserReduxState } from "./user/user.types";
 import { ISettingsReduxState } from "./settings/settings.types";
+import { IMovieSearchReduxState } from "./movieSearch/movieSearch.types";
 
 export interface IReduxState {
   global: IGlobalReduxState;
@@ -19,6 +20,7 @@ export interface IReduxState {
   modal: IModalReduxState;
   alert: IAlertReduxState;
   settings: ISettingsReduxState;
+  searchResult: IMovieSearchReduxState;
 }
 
 export interface IError {
@@ -74,6 +76,18 @@ export interface IMapSettings {
   style: "default" | "dark" | "retro" | "night" | "silver";
   drawCheckpointLines: boolean;
   drawUserPath: boolean;
+}
+
+export interface ISearchMovie {
+  search: string;
+}
+
+export interface IMovieResults {
+  id: string;
+  poster_path: string;
+  release_date: string;
+  title: string;
+  vote_average: string;
 }
 
 export interface IUserProfile {

@@ -49,6 +49,7 @@ const contextTextFontDefinitions: {
 
 export const StyledText = styled<IContentText>(Text)`
   flex-shrink: 1;
+  text-align: center;
   font-size: ${(props) => contextTextFontDefinitions[props.type].size};
   font-family: ${(props) => contextTextFontDefinitions[props.type].fontFamily};
   ${(props) => (props.uppercase ? "text-transform: uppercase;" : "")}

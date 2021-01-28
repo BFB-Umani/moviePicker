@@ -32,19 +32,14 @@ const BottomTabBar: React.FC<object & BottomTabBarProps> = (props) => {
       label: "Start",
       icon: "home",
     },
-    FindGame: {
-      label: "Play",
-      icon: "running",
+    MovieList: {
+      label: "Lists",
+      icon: "list-alt",
     },
     Profile: {
       label: "Profile",
       icon: "user-alt",
     },
-    Freerun: {
-      label: "Free Run",
-      icon: "running",
-    },
-    Competition: {},
   };
 
   return (

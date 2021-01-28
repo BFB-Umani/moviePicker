@@ -14,21 +14,13 @@ export type UnauthorizedNavigationStack = {
 
 export type AuthorizedBottomTabStack = {
   Dashboard: NavigatorScreenParams<IDashboardStack>;
-  FindGame: NavigatorScreenParams<IFindGameStack>;
+  MovieList: NavigatorScreenParams<IMovieListStack>;
   Profile: NavigatorScreenParams<IProfileStack>;
-  Competition: NavigatorScreenParams<ICompetitionStack>;
-  Freerun: NavigatorScreenParams<IFreerunStack>;
 };
 
 export type IDashboardStack = {
   Dashboard: undefined;
-};
-
-export type IFindGameStack = {
-  FindCompetition: undefined;
-  TrackSelect: {
-    competitionId: string;
-  };
+  searchResults: undefined;
 };
 
 export type IProfileStack = {
@@ -38,15 +30,7 @@ export type IProfileStack = {
   UserSettings: undefined;
 };
 
-export type ICompetitionStack = {
-  Ingame: {
-    competitionId: string;
-    trackId: string;
-  };
-  GameSettings: undefined;
-  PostGame: undefined;
+export type IMovieListStack = {
+  MovieList: undefined;
 };
 
-export type IFreerunStack = {
-  Ingame: undefined;
-};

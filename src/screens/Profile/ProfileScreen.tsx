@@ -1,7 +1,7 @@
 import React from "react";
 import { RouteProp } from "@react-navigation/native";
 import { StackNavigationProp } from "@react-navigation/stack";
-import ForestImg from "moviepicker/assets/images/background.jpg";
+import BackgroundImg from "moviepicker/assets/images/background.jpg";
 import Avatar from "moviepicker/components/Avatar/Avatar";
 import Box from "moviepicker/components/Box/Box";
 import ContentText from "moviepicker/components/ContentText/ContentText";
@@ -23,9 +23,6 @@ interface Props extends IStateProps, IDispatchProps {
 }
 
 const ProfileScreen: React.FC<Props> = (props) => {
-  const navigateToResults = () => {
-    props.navigation.navigate("MyResults");
-  };
   const navigateToSettings = () => {
     props.navigation.navigate("UserSettings");
   };
@@ -41,7 +38,7 @@ const ProfileScreen: React.FC<Props> = (props) => {
       fullwidth={true}
     >
       <Box color="secondary" flex={1}>
-        <Style.ProfileBackground source={ForestImg} blurRadius={3} />
+        <Style.ProfileBackground source={BackgroundImg} blurRadius={3} />
         {props.userProfile && (
           <Box flex={1} color="general">
             <Style.AvatarContainer>

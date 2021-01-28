@@ -1,4 +1,3 @@
-import React from "react";
 import { scrollViewRef } from "moviepicker/components/Screen/Screen";
 import { ICheckpoint } from "moviepicker/reduxStore/store.types";
 import * as dateFns from "date-fns";
