@@ -41,10 +41,14 @@ IDispatchProps &
     StackScreenProps<IDashboardStack, "Dashboard">
 > = (props) => {
 
+  /**
+   * gets all movieLists connected to logged in user and adds them to the state
+  */
   useEffect(() => {
     if (props.userProfile) {
       props.fetchLists(props.userProfile.id);
       props.fetchAllUserLists(props.userProfile.id);
+      props.fetchContributersList(props.userProfile.id);
     }
   }, [props.userProfile]);
 
@@ -202,11 +206,13 @@ const mapStateToProps = (state: IReduxState): IStateProps => ({
 interface IDispatchProps {
   fetchLists: (userId: IUserProfile["id"]) => void;
   fetchAllUserLists: (userId: IUserProfile["id"]) => void;
+  fetchContributersList: (userId: IUserProfile["id"]) => void;
   searchMovie: (fields: ISearchMovie) => void;
 }
 const mapDispatchToProps: IDispatchProps = {
   fetchLists: listsMethods.fetchLists,
   fetchAllUserLists: listsMethods.fetchAllUserLists,
+  fetchContributersList: listsMethods.fetchContributersLists,
   searchMovie: movieSearchMethods.searchMovie,
 };
 
