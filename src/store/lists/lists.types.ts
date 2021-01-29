@@ -8,6 +8,10 @@ export interface IContributersReduxState {
   list?: IMovieList[];
 }
 
+export interface IAllUserListsReduxState {
+  list?: IMovieList[];
+}
+
 export interface IMoviesReduxState {
   list?: IMovie[];
 }

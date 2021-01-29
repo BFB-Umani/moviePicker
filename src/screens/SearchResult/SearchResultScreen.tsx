@@ -56,7 +56,6 @@ IDispatchProps &
   }
 
   const openModal = () => {
-    console.log(props.lists);
     setModalVisible(true);
   }
 
@@ -167,7 +166,7 @@ interface IStateProps {
 const mapStateToProps = (state: IReduxState): IStateProps => ({
   userProfile: userSelectors.userProfileSelector(state),
   results: movieSearchSelectors.movieSearchListSelector(state),
-  lists: listSelectors.movieListSelector(state),
+  lists: listSelectors.allUserListsSelector(state),
   isFetchingResults: movieSearchSelectors.movieSearchStateSelector.isLoading(
     state
   ),
@@ -182,7 +181,7 @@ interface IDispatchProps {
 }
 const mapDispatchToProps: IDispatchProps = {
   addMovieToList: listsMethods.addMovieToList,
-  fetchLists: listsMethods.fetchLists,
+  fetchLists: listsMethods.fetchAllUserLists,
 };
 
 export default connect(

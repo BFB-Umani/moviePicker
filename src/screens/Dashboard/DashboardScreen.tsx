@@ -44,8 +44,9 @@ IDispatchProps &
   useEffect(() => {
     if (props.userProfile) {
       props.fetchLists(props.userProfile.id);
+      props.fetchAllUserLists(props.userProfile.id);
     }
-  }, []);
+  }, [props.userProfile]);
 
   const logoAnim = useSpring({
     opacity: 1,
@@ -200,10 +201,12 @@ const mapStateToProps = (state: IReduxState): IStateProps => ({
 
 interface IDispatchProps {
   fetchLists: (userId: IUserProfile["id"]) => void;
+  fetchAllUserLists: (userId: IUserProfile["id"]) => void;
   searchMovie: (fields: ISearchMovie) => void;
 }
 const mapDispatchToProps: IDispatchProps = {
   fetchLists: listsMethods.fetchLists,
+  fetchAllUserLists: listsMethods.fetchAllUserLists,
   searchMovie: movieSearchMethods.searchMovie,
 };
 

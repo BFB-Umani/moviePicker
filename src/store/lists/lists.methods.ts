@@ -1,4 +1,4 @@
-import { createNewList, getListsByCreator, getMoviesByList, addMoviesToList, getListsByContributer} from "moviepicker/firebase/api.methods";
+import { createNewList, getListsByCreator, getMoviesByList, addMoviesToList, getListsByContributer, getAllUserLists} from "moviepicker/firebase/api.methods";
 import { Dispatch } from "redux";
 
 import { addRequestState } from "../requestState";
@@ -6,6 +6,7 @@ import { IMovieList, INewMovieList, IMovie, IUserProfile } from "../store.types"
 import { movieListReduxSlice } from "./lists";
 import { moviesReduxSlice } from "./movies";
 import { contributersListReduxSlice } from "./contributersList";
+import { allUserListsReduxSlice } from "./allUserLists";
 
 /**
  * Create a new movie list linked to a given user ID
@@ -90,6 +91,31 @@ const fetchContributersLists = (userId: IUserProfile["id"]) => async (dispatch: 
   }
 };
 
+const fetchAllUserLists = (userId: IUserProfile["id"]) => async (dispatch: Dispatch) => {
+  try {
+    addRequestState({
+      name: "fetchLists",
+      state: "LOADING",
+    })(dispatch);
+
+    const allUserLists = await getAllUserLists(userId);
+
+    dispatch(
+      allUserListsReduxSlice.actions.fetchAllUserListsSuccess(allUserLists)
+    );
+    addRequestState({
+      name: "fetchLists",
+      state: "COMPLETE",
+    })(dispatch);
+  } catch (error) {
+    addRequestState({
+      name: "fetchLists",
+      state: "ERROR",
+      error,
+    })(dispatch);
+  }
+};
+
 const fetchMovies = (movieListId: IMovieList["id"]) => async (
   dispatch: Dispatch,
 ) => {
@@ -146,6 +172,7 @@ export default {
   createList,
   fetchLists,
   fetchContributersLists,
+  fetchAllUserLists,
   fetchMovies,
   addMovieToList
 };

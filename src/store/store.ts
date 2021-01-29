@@ -14,6 +14,7 @@ import settingsReducer from "./settings/settings";
 import listReducer from "./lists/lists";
 import moviesReducer from "./lists/movies";
 import contributersListReducer from "./lists/contributersList";
+import allUserListsReducer from "./lists/allUserLists";
 
 const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   global: globalReducer,
@@ -27,6 +28,7 @@ const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   lists: listReducer,
   movieList: moviesReducer,
   contributersLists: contributersListReducer,
+  allUserLists: allUserListsReducer,
 });
 
 const middlewares = [thunk];

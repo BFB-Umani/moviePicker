@@ -114,8 +114,52 @@ export const getListsByContributer = async (id: string) => {
     if(movieList.contributerId) {
       for(const data of movieList.contributerId) {
         if(data === id) {
-          console.log(data);
           let movies: IMovie[] = [];
+          if(movieList.movies){
+            movies = movieList.movies
+          }
+      
+          movieLists.push({
+            id: doc.id,
+            name: movieList.name,
+            creatorId: movieList.creatorId,
+            contributerId: movieList.contributerId,
+            movies,
+          });
+        }
+      }
+    }
+  }
+  console.log(movieLists)
+  return movieLists;
+};
+
+export const getAllUserLists = async (id: string) => {
+  const response = await firestore
+    .collection(firebaseCollections.movie_lists)
+    .get();
+
+  const movieLists: IMovieList[] = [];
+
+  for (const doc of response.docs) {
+    const movieList = doc.data() as MoviePickerAPI.MovieList;
+    let movies: IMovie[] = [];
+
+    if(movieList.creatorId === id) {
+      if(movieList.movies){
+        movies = movieList.movies
+      }
+  
+      movieLists.push({
+        id: doc.id,
+        name: movieList.name,
+        creatorId: movieList.creatorId,
+        contributerId: movieList.contributerId,
+        movies,
+      });
+    } else if(movieList.contributerId) {
+      for(const data of movieList.contributerId) {
+        if(data === id) {
           if(movieList.movies){
             movies = movieList.movies
           }

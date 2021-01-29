@@ -14,6 +14,7 @@ import { IMovieSearchReduxState } from "./movieSearch/movieSearch.types";
 import { IMovieListsReduxState } from "./lists/lists.types";
 import { IMoviesReduxState } from "./lists/lists.types";
 import { IContributersReduxState } from "./lists/lists.types";
+import { IAllUserListsReduxState } from "./lists/lists.types";
 
 export interface IReduxState {
   global: IGlobalReduxState;
@@ -26,7 +27,8 @@ export interface IReduxState {
   searchResult: IMovieSearchReduxState;
   lists: IMovieListsReduxState;
   movieList: IMoviesReduxState;
-  contributersLists: IContributersReduxState
+  contributersLists: IContributersReduxState;
+  allUserLists: IAllUserListsReduxState;
 }
 
 export interface IError {

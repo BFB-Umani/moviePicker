@@ -1,1 +1,1 @@
-export * from "./endpoints/results";
+export * from "./endpoints/firebaseEndpoint";

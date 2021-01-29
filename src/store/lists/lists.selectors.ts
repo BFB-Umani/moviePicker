@@ -19,6 +19,14 @@ const contributersListSelector = createSelector(
       : []
 );
 
+const allUserListsSelector = createSelector(
+  (state: IReduxState) => state.allUserLists,
+  (movieListState) =>
+    movieListState.list
+      ? movieListState.list
+      : []
+);
+
 const moviesSelector = createSelector(
   (state: IReduxState) => state.movieList,
   (movieListState) =>
@@ -41,6 +49,7 @@ const addMovieToList = generateRequestStateSelectors(
 export default {
   movieListSelector,
   contributersListSelector,
+  allUserListsSelector,
   moviesSelector,
   fetchListStateSelector,
   fetchMovieListStateSelector,

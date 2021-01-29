@@ -6,7 +6,7 @@ import { IContributersReduxState } from "./lists.types";
 const initialState: IContributersReduxState = {};
 
 export const contributersListReduxSlice = createSlice({
-  name: "movieList",
+  name: "contributersList",
   initialState,
   reducers: {
     fetchContributersListsSuccess: (
