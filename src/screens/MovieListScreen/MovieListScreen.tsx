@@ -6,9 +6,8 @@ import {
   AuthorizedBottomTabStack,
   IDashboardStack,
 } from "moviepicker/navigation/Navigation.types";
-import movieSearchSelectors from "moviepicker/reduxStore/movieSearch/movieSearch.selectors";
-import { IReduxState, IMovieResults } from "moviepicker/reduxStore/store.types";
-import React, { useRef } from "react";
+import { IReduxState, IMovie } from "moviepicker/reduxStore/store.types";
+import React, { useRef, useState } from "react";
 import { connect } from "react-redux";
 import { Modalize } from "react-native-modalize";
 import { Portal } from "react-native-portalize";
@@ -16,7 +15,8 @@ import Button from "moviepicker/components/Button/Button";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import SearchImage from "moviepicker/components/SearchImage/SearchImage";
 
-import SearchResultList from "./MovieList/MovieList";
+import MovieList from "./MovieList/MovieList";
+import listsSelectors from "moviepicker/reduxStore/lists/lists.selectors";
 
 const searchResultScreen: React.FC<
 IStateProps &
@@ -25,44 +25,30 @@ IStateProps &
 > = (props) => {
 
   const modalizeRef = useRef<Modalize>(null);
+  const [searchImageSrc, setsearchImageSrc] = useState(".jpg");
+  const [movieName, setmovieName] = useState("placeholder");
 
-  let searchImageSrc = "https://image.tmdb.org/t/p/w500/uh8bwvgGXeUKzdL4oSul9zxyTcd.jpg";
-  let imageSrcSet = false;
-
-  const onSelectMovie = async (result: IMovieResults) => {
-    if (result && result.id) {
-      await setSearchImageSrc(result);
-      if(imageSrcSet) {
-        modalizeRef.current?.open();
-      }
-    }
+  const onGiveRandomMovie = () => {
+    const rn = Math.floor(Math.random() * props.movies.length);
+    const result = props.movies[rn];
+    setmovieName(result.title)
+    setsearchImageSrc(result.poster_path);
+    modalizeRef.current?.open();
   };
-  const setSearchImageSrc = (result: IMovieResults) => {
-    searchImageSrc = result.poster_path;
-    imageSrcSet = true;
-  }
 
   return (
     <Screen
       header={{
         color: "general",
-        title: "Your Lists",
+        title: "movies",
       }}
       showLoadingIndicator={
-        props.results.length === 0 && props.isFetchingResults
+        props.movies.length === 0 && props.isFetchingResults
       }
       loadingText="Fetching results"
       noScroll={true}
       ignorepadding={true}
     >
-      <Separator color="primary"/>
-      <Box>
-        <SearchResultList
-          results={props.results}
-          isRefreshing={props.isFetchingResults}
-          onSelectMovie={onSelectMovie}
-        />
-      </Box>
       <Portal>
         <Modalize
           ref={modalizeRef}
@@ -71,47 +57,49 @@ IStateProps &
           adjustToContentHeight={true}
         >
           <Box padding="sm" color="general" paddingbottom="xlg">
-            <Box alignItems="center" marginbottom="sm">
-              <SearchImage imageUrl={searchImageSrc}/>
-            </Box>
             <ContentText
               type="h3"
               marginbottom="md"
               color="text"
               textalign="center"
             >
-              Add to List?
+              Tonight you'll watch {movieName}!
             </ContentText>
-            <Button
-              size="small"
-              label="add to list"
-              type="text"
-              hollow={true}
-              iconLeft="camera"
-            />
-            <Button
-              size="small"
-              label="create and add to new list"
-              type="text"
-              hollow={true}
-              iconLeft="images"
-              margintop="md"
-              
-            />
+            <Box alignItems="center" marginbottom="sm">
+              <SearchImage imageUrl={searchImageSrc}/>
+            </Box>
           </Box>
         </Modalize>
       </Portal>
+      <Separator color="primary"/>
+      {props.movies.length > 0 && (
+        <Box padding="sm" color="general" >
+          <Button
+            size="small"
+            label="get random movie!"
+            type="secondary"
+            hollow={false}
+            onPress={onGiveRandomMovie}
+          />
+        </Box>)}
+      <Box paddingbottom="xxxlg">
+        <MovieList
+          movies={props.movies}
+          isRefreshing={props.isFetchingResults}
+        />
+      </Box>
+          
     </Screen>
   );
 };
 
 interface IStateProps {
-  results: IMovieResults[];
+  movies: IMovie[];
   isFetchingResults: boolean;
 }
 const mapStateToProps = (state: IReduxState): IStateProps => ({
-  results: movieSearchSelectors.movieSearchListSelector(state),
-  isFetchingResults: movieSearchSelectors.movieSearchStateSelector.isLoading(
+  movies: listsSelectors.moviesSelector(state),
+  isFetchingResults: listsSelectors.fetchMovieListStateSelector.isLoading(
     state
   ),
 });

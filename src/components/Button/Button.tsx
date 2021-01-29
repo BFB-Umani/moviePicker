@@ -13,7 +13,7 @@ const Button: React.FC<IButton & TouchableOpacityProps & WithMarginProps> = ({
 }) => (
   <Style.Container
     {...props}
-    activeOpacity={1}
+    activeOpacity={0.2}
     style={{ elevated: props.elevated && 5 }}
   >
     {props.iconLeft && (

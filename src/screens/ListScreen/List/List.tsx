@@ -1,19 +1,24 @@
 import Box from "moviepicker/components/Box/Box";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import Icon from "moviepicker/components/Icon/Icon";
-import { IMovie } from "moviepicker/reduxStore/store.types";
+import Separator from "moviepicker/components/Separator/Separator";
+import { IMovie, IMovieList } from "moviepicker/reduxStore/store.types";
 import React from "react";
 import { RefreshControl, FlatList, TouchableOpacity, } from "react-native";
-import SearchImage from "moviepicker/components/SearchImage/SearchImage";
+import CreateListButton from "moviepicker/components/CreateListButton/CreateListButton";
 
 interface Props {
-  movies: IMovie[];
+  lists: IMovieList[];
+  onSelectList: (results: IMovieList) => void;
+  onCreateList: () => void;
   isRefreshing: boolean;
+  messageForUser: string;
 }
 
 const MovieList: React.FC<Props> = (props) => {
 
-  const renderCompetitionListItem = (results: IMovie) => (
+  const renderCompetitionListItem = (results: IMovieList) => (
+    <TouchableOpacity onPress={() => props.onSelectList(results)}>
       <Box
         justifyContent="space-around"
         alignItems="center"
@@ -21,19 +26,16 @@ const MovieList: React.FC<Props> = (props) => {
         padding="sm"
       >
           <Box flex={1} alignItems="center">
-            <SearchImage imageUrl={results.poster_path} activeOpacity={1}/>
-            <ContentText type="h1" color="text">{results.title}</ContentText>
-            <Box margintop="xxs" flexDirection="row" alignItems="center">
-              <Icon icon="star" marginright="xxs" color="gold" size="xxs" />
-              <ContentText type="description" color="disabled">
-                  {results.vote_average}
-              </ContentText>
-            </Box>
+            <Icon icon="list" size="xxs"/>
+            <ContentText type="h3" color="text">{results.name}</ContentText>
           </Box>
+          <Icon icon="chevron-right" size="xxs" />
       </Box>
+      <Separator color="panel" />
+    </TouchableOpacity>
   );
 
-  const resultList = props.movies;
+  const resultList = props.lists;
 
   return (
     <Box alignItems="center">
@@ -52,14 +54,25 @@ const MovieList: React.FC<Props> = (props) => {
         {!props.isRefreshing && resultList.length === 0 && (
           <Box padding="sm" alignItems="center" justifyContent="center">
             <ContentText type="h1" color="disabled" textalign="center">
-              Could not find any movies..
+              Could not find any lists..
             </ContentText>
             <ContentText type="h1" color="disabled" textalign="center">
-              Search and add movies to your list!
+              {props.messageForUser}
             </ContentText>
-          </Box>    
+          </Box>  
         )}
       </Box>
+      <Box alignItems="center">
+              <CreateListButton
+                size="xxxlarge"
+                type="primary"
+                hollow={false}
+                icon="plus"
+                margintop="md"
+                iconColor="general"
+                onPress={props.onCreateList}
+              />
+            </Box>
     </Box>
   );
 };

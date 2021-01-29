@@ -14,7 +14,7 @@ export type UnauthorizedNavigationStack = {
 
 export type AuthorizedBottomTabStack = {
   Dashboard: NavigatorScreenParams<IDashboardStack>;
-  MovieList: NavigatorScreenParams<IMovieListStack>;
+  List: NavigatorScreenParams<IMovieListStack>;
   Profile: NavigatorScreenParams<IProfileStack>;
 };
 
@@ -31,6 +31,7 @@ export type IProfileStack = {
 };
 
 export type IMovieListStack = {
+  List: undefined;
   MovieList: undefined;
 };
 

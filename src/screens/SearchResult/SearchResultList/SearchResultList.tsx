@@ -2,20 +2,20 @@ import Box from "moviepicker/components/Box/Box";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import Icon from "moviepicker/components/Icon/Icon";
 import Separator from "moviepicker/components/Separator/Separator";
-import { IMovieResults } from "moviepicker/reduxStore/store.types";
+import { IMovie } from "moviepicker/reduxStore/store.types";
 import React from "react";
 import { RefreshControl, FlatList, TouchableOpacity, } from "react-native";
 import SearchImage from "moviepicker/components/SearchImage/SearchImage";
 
 interface Props {
-  results: IMovieResults[];
-  onSelectMovie: (results: IMovieResults) => void;
+  results: IMovie[];
+  onSelectMovie: (results: IMovie) => void;
   isRefreshing: boolean;
 }
 
 const CompetitionList: React.FC<Props> = (props) => {
 
-  const renderCompetitionListItem = (results: IMovieResults) => (
+  const renderSearchResultListItem = (results: IMovie) => (
     <TouchableOpacity onPress={() => props.onSelectMovie(results)}>
       <Box
         justifyContent="space-around"
@@ -47,7 +47,7 @@ const CompetitionList: React.FC<Props> = (props) => {
           contentContainerStyle={{ paddingBottom: 20 }}
           data={resultList}
           keyExtractor={(item) => item.id}
-          renderItem={({ item }) => renderCompetitionListItem(item)}
+          renderItem={({ item }) => renderSearchResultListItem(item)}
           refreshControl={
             <RefreshControl
               refreshing={props.isRefreshing}

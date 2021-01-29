@@ -29,7 +29,7 @@ export const firebaseStorage = firebase.storage();
 export const firebaseCollections: { [key in FirebaseCollections]: string } = {
   categories: "categories",
   movies: "movies",
-  user_lists: "user_lists",
+  movie_lists: "movie_lists",
   user_accounts: "user_accounts",
   creators: "creators",
   contributers: "contributers",

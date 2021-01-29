@@ -18,7 +18,6 @@ import {
   IReduxState,
   IEditUserProfile,
   IUserProfile,
-  IUserLocation,
 } from "../store.types";
 import { userReduxSlice } from "./user";
 
@@ -103,6 +102,24 @@ const fetchUserProfile = (userId: string) => async (dispatch: Dispatch) => {
       state: "ERROR",
       error,
     })(dispatch);
+  }
+};
+
+export const fetchUserProfileByEmail = async (userEmail: string) => {
+  try {
+    let userProfileData;
+    await firestore
+      .collection(firebaseCollections.user_accounts)
+      .where("email", "==", userEmail)
+      .get().then((response) => {
+        if (response.docs.length === 0 || !response.docs[0]) {
+          throw Error("User profile does not exist");
+        }
+        userProfileData = response.docs[0].data() as MoviePickerAPI.UserData;
+      });
+
+      return userProfileData.id as string;
+  } catch (error) {
   }
 };
 
@@ -324,70 +341,12 @@ const uploadAvatar = (imageURI: string) => async (
   }
 };
 
-/**
- * Attempts to request the user's location
- * (asks for permission if not yet asked)
- */
-const requestUserLocation = () => async (
-  dispatch: Dispatch,
-  getState: () => IReduxState
-) => {
-  try {
-    const { status } = await Location.requestPermissionsAsync();
-    if (status !== "granted") {
-      dispatch(userReduxSlice.actions.setGranted(false));
-      alertMethods.createAlert({
-        id: "locationpermission-alert",
-        text: "You need to enable location permissions in order to play!",
-        color: "warning",
-        onClick: () => {
-          alertMethods.closeAlert("locationpermission-alert")(dispatch);
-          Utils.openAppSettings();
-        },
-      })(dispatch, getState);
-      throw Error("Location permission not granted");
-    }
-
-    // We have permission granted
-    dispatch(userReduxSlice.actions.setGranted(true));
-
-    // Let's attempt to locate the user
-    const location = await Location.getCurrentPositionAsync({
-      accuracy: Location.Accuracy.High,
-    });
-    if (location && location.coords) {
-      dispatch(
-        userReduxSlice.actions.updateLocation({
-          latitude: location.coords.latitude,
-          longitude: location.coords.longitude,
-        })
-      );
-    }
-  } catch (error) {
-    addRequestState({
-      name: "requestUserLocation",
-      state: "ERROR",
-      error,
-    })(dispatch);
-  }
-};
-
-/**
- * Updates the user's current location
- */
-const updateUserLocation = (location: IUserLocation) => (
-  dispatch: Dispatch
-) => {
-  dispatch(userReduxSlice.actions.updateLocation(location));
-};
-
 export default {
   fetchCurrentUserProfile,
   fetchUserProfile,
+  fetchUserProfileByEmail,
   createUserProfile,
   updateUserProfile,
   toggleCameraToUpdateAvatar,
   openCameraRollToUpdateAvatar,
-  requestUserLocation,
-  updateUserLocation,
 };

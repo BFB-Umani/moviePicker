@@ -1,5 +1,5 @@
-import { IMovieResults } from "../store.types";
+import { IMovie } from "../store.types";
 
 export interface IMovieSearchReduxState {
-  searchResult?: IMovieResults[];
+  searchResult?: IMovie[];
 }

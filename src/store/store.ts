@@ -11,6 +11,9 @@ import movieSearchReducer from "./movieSearch/movieSearch"
 import { IReduxState } from "./store.types";
 import userReducer from "./user/user";
 import settingsReducer from "./settings/settings";
+import listReducer from "./lists/lists";
+import moviesReducer from "./lists/movies";
+import contributersListReducer from "./lists/contributersList";
 
 const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   global: globalReducer,
@@ -21,6 +24,9 @@ const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   alert: alertReducer,
   settings: settingsReducer,
   searchResult: movieSearchReducer,
+  lists: listReducer,
+  movieList: moviesReducer,
+  contributersLists: contributersListReducer,
 });
 
 const middlewares = [thunk];

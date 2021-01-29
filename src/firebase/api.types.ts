@@ -1,7 +1,12 @@
+import {
+  IMovie,
+  IMovieList,
+  INewMovieList
+} from "moviepicker/reduxStore/store.types";
+
 export type FirebaseCollections =
   | "categories"
-  | "movies"
-  | "user_lists"
+  | "movie_lists"
   | "user_accounts"
   | "creators"
   | "contributers";
@@ -16,53 +21,33 @@ export namespace MoviePickerAPI {
     email: string;
   }
 
-  export interface Movie {
+  export interface MovieList {
     id: string;
-    poster_path: string;
-    release_date: string;
-    title: string;
-    vote_average: number;
-  }
-
-  export interface Movie_List {
-    id: string;
-    list: Omit<Movie, "id">[];
-    creator: Creator;
-    contributer: Contributer;
-  }
-
-  export interface NewList {
-    startedTime: number;
-    creator: NewCreator;
-    contributer?: NewContributer;
-    list: Omit<Movie, "id">[];
+    name: string;
+    movies?: IMovie[];
+    creatorId: string;
+    contributerId?: string[];
   }
 
   export interface Creator {
     id: string;
     name: string;
-    listKey: string;
-    listName?: string;
+    email: string;
     userAccountKey: string;
   }
 
   export interface NewCreator {
-    listKey: string;
-    listName?: string;
     userAccountKey: string;
   }
   
   export interface Contributer {
     id: string;
     name: string;
-    listKey: string;
-    listName?: string;
+    email: string;
     userAccountKey: string;
   }
 
   export interface NewContributer {
-    listKey: string;
-    listName?: string;
     userAccountKey: string;
   }
 }

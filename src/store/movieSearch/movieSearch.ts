@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 import {
-  IMovieResults,
+  IMovie,
 } from "../store.types";
 import { IMovieSearchReduxState } from "./movieSearch.types";
 
@@ -14,7 +14,7 @@ export const movieSearchReduxSlice = createSlice({
     resetState: () => initialState,
     fetchMovieSuccess: (
       state,
-      action: PayloadAction<IMovieResults[]>
+      action: PayloadAction<IMovie[]>
     ) => {
       state.searchResult = action.payload;
     },

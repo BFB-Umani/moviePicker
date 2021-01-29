@@ -11,6 +11,9 @@ import { IRequestStateRedux } from "./requestState";
 import { IUserReduxState } from "./user/user.types";
 import { ISettingsReduxState } from "./settings/settings.types";
 import { IMovieSearchReduxState } from "./movieSearch/movieSearch.types";
+import { IMovieListsReduxState } from "./lists/lists.types";
+import { IMoviesReduxState } from "./lists/lists.types";
+import { IContributersReduxState } from "./lists/lists.types";
 
 export interface IReduxState {
   global: IGlobalReduxState;
@@ -21,6 +24,9 @@ export interface IReduxState {
   alert: IAlertReduxState;
   settings: ISettingsReduxState;
   searchResult: IMovieSearchReduxState;
+  lists: IMovieListsReduxState;
+  movieList: IMoviesReduxState;
+  contributersLists: IContributersReduxState
 }
 
 export interface IError {
@@ -57,32 +63,11 @@ export interface IAlert {
   state?: "animating-out";
 }
 
-export interface IAppSettings {
-  map: IMapSettings;
-  ui: IUISettings;
-  general: IGeneralSettings;
-}
-export interface IGeneralSettings {
-  soundOn: boolean;
-}
-export interface IUISettings {
-  showScore: boolean;
-  showTime: boolean;
-  showDistanceTravelled: boolean;
-  showPace: boolean;
-}
-export interface IMapSettings {
-  type: "standard" | "satellite" | "hybrid" | "terrain";
-  style: "default" | "dark" | "retro" | "night" | "silver";
-  drawCheckpointLines: boolean;
-  drawUserPath: boolean;
-}
-
 export interface ISearchMovie {
   search: string;
 }
 
-export interface IMovieResults {
+export interface IMovie {
   id: string;
   poster_path: string;
   release_date: string;
@@ -108,91 +93,19 @@ export interface IEditUserProfile {
   organization?: string;
 }
 
-export interface IUserLocation {
-  latitude: number;
-  longitude: number;
-  heading?: number;
-  speed?: number;
-  accuracy?: number;
-  timestamp?: number;
-  altitude?: number;
-  altitudeAccuracy?: number;
-}
-
-export interface ICheckpoint {
+export interface IMovieList {
   id: string;
-  label?: string | null;
-  coordinates: {
-    latitude: number;
-    longitude: number;
-  };
-  geofenceRadius: number;
-  order: number;
-  type: "START" | "QUESTION" | "PENALTY" | "FINISH";
-  question?: IQuestion;
-}
-
-export interface IQuestion {
-  id: string;
-  categoryId: string;
-  text: string;
-  imageUrl?: string;
-  options: IQuestionOption[];
-  correctOption: IQuestionOption["value"];
-}
-
-export interface IQuestionOption {
-  value: string;
-  text: string;
-  imageUrl?: string | null;
-}
-
-export interface IQuestionAnswerData {
-  checkpoint: ICheckpoint;
-  selectedOption: IQuestionOption["value"];
-  timeToAnswerMs: number;
-  state: "CORRECT" | "INCORRECT";
-}
-
-export interface ITrack {
-  id: string;
-  name?: string;
-  categoryId?: string;
-  checkpoints?: ICheckpoint[];
-}
-
-export interface ICompetition {
-  id: string;
-  order: number;
   name: string;
-  tracks: ITrack[];
+  movies?: IMovie[];
+  creatorId: string;
+  contributerId?: string[];
 }
 
-export interface IResult {
-  id: string;
-  user: IUserProfile;
-  competition: ICompetition;
-  track: ITrack;
-  startTime: string;
-  finishTime?: string;
-  visitedCheckpoints: ICheckpoint[];
-  userLocations: IUserLocation[];
-  questionAnswers: IQuestionAnswerData[];
-  totalTime: string;
-  totalDistance: string;
-  averagePace: string;
-  averageTimeToAnswer: string;
-}
-
-export interface ISaveResultProps {
-  userId: IUserProfile["id"];
-  competition: ICompetition;
-  track: ITrack;
-  startTime: string;
-  finishTime: string;
-  visitedCheckpoints: ICheckpoint[];
-  userLocations: IUserLocation[];
-  questionAnswers: IQuestionAnswerData[];
+export interface INewMovieList {
+  name: string;
+  movies?: IMovie[];
+  creatorId: string;
+  contributerId?: string[];
 }
 
 export interface IPushNotification {

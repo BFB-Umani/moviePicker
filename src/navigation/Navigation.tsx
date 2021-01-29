@@ -16,6 +16,7 @@ import ResetPasswordScreen from "moviepicker/screens/ResetPassword/ResetPassword
 import SignupScreen from "moviepicker/screens/Signup/SignupScreen";
 import UserSettingsScreen from "moviepicker/screens/UserSettings/UserSettingsScreen";
 import MovieListScreen from "moviepicker/screens/MovieListScreen/MovieListScreen";
+import ListScreen from "moviepicker/screens/ListScreen/ListScreen";
 import { Host } from "react-native-portalize";
 
 import BottomTabBar from "./BottomTabBar/BottomTabBar";
@@ -68,7 +69,7 @@ const renderBottomTabBar = (props) => <BottomTabBar {...props} />;
 const BottomTabs = () => (
   <BottomTabStack.Navigator tabBar={renderBottomTabBar}>
     <BottomTabStack.Screen name="Dashboard" component={DashboardScreens} />
-    <BottomTabStack.Screen name="MovieList" component={MovieListScreens} />
+    <BottomTabStack.Screen name="List" component={MovieListScreens} />
     <BottomTabStack.Screen name="Profile" component={ProfileScreens} />
   </BottomTabStack.Navigator>
 );
@@ -93,6 +94,7 @@ const ProfileScreens = () => (
 const MovieListStack = createStackNavigator<IMovieListStack>();
 const MovieListScreens = () => (
   <MovieListStack.Navigator>
+    <MovieListStack.Screen name="List" component={ListScreen} />
     <MovieListStack.Screen name="MovieList" component={MovieListScreen} />
   </MovieListStack.Navigator>
 );

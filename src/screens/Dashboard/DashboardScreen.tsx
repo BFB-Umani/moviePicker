@@ -1,4 +1,4 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useEffect } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Alert from "moviepicker/components/Alert/Alert";
 import Button from "moviepicker/components/Button/Button";
@@ -18,6 +18,8 @@ import {
   IError,
   IReduxState,
   ISearchMovie,
+  IUserProfile,
+  IMovieList,
 } from "moviepicker/reduxStore/store.types";
 import Utils from "moviepicker/utils/index";
 import { useSpring } from "react-spring";
@@ -26,6 +28,9 @@ import movieSearchMethods from "moviepicker/reduxStore/movieSearch/movieSearch.m
 import movieSearchSelectors from "moviepicker/reduxStore/movieSearch/movieSearch.selectors";
 import { connect } from "react-redux";
 import * as yup from "yup";
+import userSelectors from "moviepicker/reduxStore/user/user.selectors";
+import listsMethods from "moviepicker/reduxStore/lists/lists.methods";
+import listSelectors from "moviepicker/reduxStore/lists/lists.selectors";
 
 import * as Style from "./DashboardScreen.style";
 
@@ -36,6 +41,11 @@ IDispatchProps &
     StackScreenProps<IDashboardStack, "Dashboard">
 > = (props) => {
 
+  useEffect(() => {
+    if (props.userProfile) {
+      props.fetchLists(props.userProfile.id);
+    }
+  }, []);
 
   const logoAnim = useSpring({
     opacity: 1,
@@ -145,6 +155,7 @@ IDispatchProps &
         disabled={
           !formState.isDirty ||
           props.searchMovieInProgress ||
+          props.fetchListInProgress ||
           !formState.isValid
         }
         marginbottom="xlg"
@@ -171,20 +182,28 @@ IDispatchProps &
 };
 
 interface IStateProps {
+  userProfile?: IUserProfile;
   searchMovieInProgress?: boolean;
+  lists: IMovieList[];
+  fetchListInProgress: boolean;
   searchMovieError?: IError;
 }
 const mapStateToProps = (state: IReduxState): IStateProps => ({
+  userProfile: userSelectors.userProfileSelector(state),
+  lists: listSelectors.movieListSelector(state),
   searchMovieInProgress: movieSearchSelectors.movieSearchStateSelector.isLoading(
     state
   ),
+  fetchListInProgress: listSelectors.fetchListStateSelector.isLoading(state),
   searchMovieError: movieSearchSelectors.movieSearchStateSelector.error(state),
 });
 
 interface IDispatchProps {
+  fetchLists: (userId: IUserProfile["id"]) => void;
   searchMovie: (fields: ISearchMovie) => void;
 }
 const mapDispatchToProps: IDispatchProps = {
+  fetchLists: listsMethods.fetchLists,
   searchMovie: movieSearchMethods.searchMovie,
 };
 
