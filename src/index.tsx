@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import ModalHandler from "moviepicker/components/Modal/ModalHandler";
 import { IReduxState } from "moviepicker/reduxStore/store.types";
 import { AppState, AppStateStatus } from "react-native";
 import { connect } from "react-redux";
@@ -42,7 +41,6 @@ const MoviePicker: React.FunctionComponent<IStateProps & IDispatchProps> = (
 
   return (
     <>
-      <ModalHandler />
       <Navigation
         isAuthStateKnown={props.authState !== "INITIAL"}
         isAuthenticated={

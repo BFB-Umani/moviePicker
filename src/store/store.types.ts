@@ -4,7 +4,6 @@ import { ColorType } from "moviepicker/styles/colors";
 
 import { IAuthReduxState } from "./auth/auth.types";
 import { IGlobalReduxState } from "./global/global.types";
-import { IModalReduxState } from "./modal/modal.types";
 import { IRequestStateRedux } from "./requestState";
 import { IUserReduxState } from "./user/user.types";
 import { IMovieSearchReduxState } from "./movieSearch/movieSearch.types";
@@ -18,7 +17,6 @@ export interface IReduxState {
   requestState: IRequestStateRedux;
   auth: IAuthReduxState;
   user: IUserReduxState;
-  modal: IModalReduxState;
   searchResult: IMovieSearchReduxState;
   lists: IMovieListsReduxState;
   movieList: IMoviesReduxState;
@@ -47,19 +45,6 @@ export interface IRequestProps {
   state: RequestState;
   error?: IError;
 }
-
-export interface IModal {
-  id?: string;
-  title?: string;
-  content: React.ReactNode;
-  button?: IButton;
-  fullScreen?: boolean;
-  scrimColor?: ModalScrimColor;
-  onClose?: () => void;
-  state?: "animating-out";
-  disableScrimClick?: boolean;
-}
-export type ModalScrimColor = "bright" | "dark";
 
 export interface ISearchMovie {
   search: string;

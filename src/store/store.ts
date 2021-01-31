@@ -4,12 +4,10 @@ import thunk from "redux-thunk";
 
 import authReducer from "./auth/auth";
 import globalReducer from "./global/global";
-import modalReducer from "./modal/modal";
 import requestStateReducer from "./requestState";
 import movieSearchReducer from "./movieSearch/movieSearch"
 import { IReduxState } from "./store.types";
 import userReducer from "./user/user";
-import settingsReducer from "./settings/settings";
 import listReducer from "./lists/lists";
 import moviesReducer from "./lists/movies";
 import contributersListReducer from "./lists/contributersList";
@@ -20,7 +18,6 @@ const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   requestState: requestStateReducer,
   auth: authReducer,
   user: userReducer,
-  modal: modalReducer,
   searchResult: movieSearchReducer,
   lists: listReducer,
   movieList: moviesReducer,
