@@ -1,7 +1,7 @@
-import { IButton } from "moviepicker/components/Button/Button.types";
 import { IconType } from "moviepicker/components/Icon/Icon.types";
 import { ColorType } from "moviepicker/styles/colors";
 
+import { IAlertReduxState } from "./alert/alert.types";
 import { IAuthReduxState } from "./auth/auth.types";
 import { IGlobalReduxState } from "./global/global.types";
 import { IRequestStateRedux } from "./requestState";
@@ -17,6 +17,7 @@ export interface IReduxState {
   requestState: IRequestStateRedux;
   auth: IAuthReduxState;
   user: IUserReduxState;
+  alert: IAlertReduxState;
   searchResult: IMovieSearchReduxState;
   lists: IMovieListsReduxState;
   movieList: IMoviesReduxState;

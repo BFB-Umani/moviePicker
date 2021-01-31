@@ -12,7 +12,7 @@ import { allUserListsReduxSlice } from "./allUserLists";
  * Create a new movie list linked to a given user ID stored as "creatorId" in param object
  * @param listData 
  */
-const createList = (listData: INewMovieList) => async (
+export const createList = (listData: INewMovieList) => async (
     dispatch: Dispatch
   ) => {
     try {
@@ -45,7 +45,7 @@ const createList = (listData: INewMovieList) => async (
  * Fetches all lists created by user, using the users ID
  * @param userId 
  */
-const fetchListsById = (userId: IUserProfile["id"]) => async (dispatch: Dispatch) => {
+export const fetchListsById = (userId: IUserProfile["id"]) => async (dispatch: Dispatch) => {
   try {
     addRequestState({
       name: "fetchLists",
@@ -74,7 +74,7 @@ const fetchListsById = (userId: IUserProfile["id"]) => async (dispatch: Dispatch
  * Fetches all lists where user is marked as contributer, by using user ID
  * @param userId 
  */
-const fetchContributersLists = (userId: IUserProfile["id"]) => async (dispatch: Dispatch) => {
+export const fetchContributersLists = (userId: IUserProfile["id"]) => async (dispatch: Dispatch) => {
   try {
     addRequestState({
       name: "fetchLists",
@@ -103,7 +103,7 @@ const fetchContributersLists = (userId: IUserProfile["id"]) => async (dispatch: 
  * Fetches all lists connected to user ID, both as creator and contributer
  * @param userId 
  */
-const fetchAllUserLists = (userId: IUserProfile["id"]) => async (dispatch: Dispatch) => {
+export const fetchAllUserLists = (userId: IUserProfile["id"]) => async (dispatch: Dispatch) => {
   try {
     addRequestState({
       name: "fetchLists",
@@ -132,7 +132,7 @@ const fetchAllUserLists = (userId: IUserProfile["id"]) => async (dispatch: Dispa
  * Fetches movies that is connected to a movieList by movieList ID
  * @param movieListId 
  */
-const fetchMovies = (movieListId: IMovieList["id"]) => async (
+export const fetchMovies = (movieListId: IMovieList["id"]) => async (
   dispatch: Dispatch,
 ) => {
   try {
@@ -165,7 +165,7 @@ const fetchMovies = (movieListId: IMovieList["id"]) => async (
  * @param movie 
  * @param list 
  */
-const addMovieToList = (movie: IMovie, list: IMovieList) => async (
+export const addMovieToList = (movie: IMovie, list: IMovieList) => async (
   dispatch: Dispatch,
   ) => {
 

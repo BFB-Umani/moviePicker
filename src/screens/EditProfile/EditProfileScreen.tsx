@@ -13,10 +13,8 @@ import {
   AuthorizedBottomTabStack,
   IProfileStack,
 } from "moviepicker/navigation/Navigation.types";
-import modalMethods from "moviepicker/reduxStore/modal/modal.methods";
 import {
   IError,
-  IModal,
   IReduxState,
   IUserProfile,
 } from "moviepicker/reduxStore/store.types";

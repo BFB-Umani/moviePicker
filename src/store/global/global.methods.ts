@@ -7,7 +7,7 @@ import { IGlobalReduxState } from "./global.types";
  * updates applications state after user grants permissons outside of app
  * @param newState 
  */
-const updateAppState = (newState: IGlobalReduxState["appState"]) => (
+export const updateAppState = (newState: IGlobalReduxState["appState"]) => (
   dispatch: Dispatch
 ) => dispatch(globalReduxSlice.actions.setAppState(newState));
 

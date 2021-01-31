@@ -8,7 +8,7 @@ import alertSelectors from "./alert.selectors";
  * create custom alert to show user when somthing has gone wrong in the application
  * @param alert 
  */
-const createAlert = (alert: IAlert) => (
+export const createAlert = (alert: IAlert) => (
   dispatch: Dispatch,
   getState: () => IReduxState
 ) => {
@@ -25,11 +25,11 @@ const createAlert = (alert: IAlert) => (
   }
 };
 
-const closeAlert = (id: IAlert["id"]) => (dispatch: Dispatch) => {
+export const closeAlert = (id: IAlert["id"]) => (dispatch: Dispatch) => {
   dispatch(alertReduxSlice.actions.close(id));
 };
 
-const closeAlertByIndex = (index: number) => (dispatch: Dispatch) => {
+export const closeAlertByIndex = (index: number) => (dispatch: Dispatch) => {
   dispatch(alertReduxSlice.actions.closeByIndex(index));
 };
 

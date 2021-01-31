@@ -21,7 +21,7 @@ import { userReduxSlice } from "./user";
 /**
  * Fetches the currently logged in user's profile
  */
-const fetchCurrentUserProfile = () => async (
+export const fetchCurrentUserProfile = () => async (
   dispatch: Dispatch,
   getState: () => IReduxState
 ) => {
@@ -65,7 +65,7 @@ const fetchCurrentUserProfile = () => async (
  * fetches a user profile by using the userId connected to the user
  * @param userId 
  */
-const fetchUserProfile = (userId: string) => async (dispatch: Dispatch) => {
+export const fetchUserProfile = (userId: string) => async (dispatch: Dispatch) => {
   try {
     const response = await firestore
       .collection(firebaseCollections.user_accounts)
@@ -131,7 +131,7 @@ export const fetchUserProfileByEmail = async (userEmail: string) => {
 /**
  * Create a new User Profile linked to a given user ID
  */
-const createUserProfile = (profileData: IUserProfile) => async (
+export const createUserProfile = (profileData: IUserProfile) => async (
   dispatch: Dispatch
 ) => {
   try {
@@ -180,7 +180,7 @@ const createUserProfile = (profileData: IUserProfile) => async (
 /**
  * Update the current user's profile
  */
-const updateUserProfile = (profileData: IEditUserProfile) => async (
+export const updateUserProfile = (profileData: IEditUserProfile) => async (
   dispatch: Dispatch,
   getState: () => IReduxState
 ) => {
@@ -229,7 +229,7 @@ const updateUserProfile = (profileData: IEditUserProfile) => async (
 /**
  * starts mobile camera for user to upload a profile picture
  */
-const toggleCameraToUpdateAvatar = () => async (
+export const toggleCameraToUpdateAvatar = () => async (
   dispatch: Dispatch,
   getState: () => IReduxState
 ) => {
@@ -270,7 +270,7 @@ const toggleCameraToUpdateAvatar = () => async (
 /**
  * opens mobile camera-roll for user to upload a profile picture
  */
-const openCameraRollToUpdateAvatar = () => async (
+export const openCameraRollToUpdateAvatar = () => async (
   dispatch: Dispatch,
   getState: () => IReduxState
 ) => {
@@ -311,7 +311,7 @@ const openCameraRollToUpdateAvatar = () => async (
  * uploads chosen image from user to database connected to their user account
  * @param imageURI 
  */
-const uploadAvatar = (imageURI: string) => async (
+export const uploadAvatar = (imageURI: string) => async (
   dispatch: Dispatch,
   getState: () => IReduxState
 ) => {

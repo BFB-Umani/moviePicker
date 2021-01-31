@@ -1,0 +1,834 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>DataSnapshot | undefined</title>
+	<meta name="description" content="Documentation for undefined">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">undefined</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">undefined</a>
+				</li>
+				<li>
+					<a href="../modules/firebase.html">firebase</a>
+				</li>
+				<li>
+					<a href="../modules/firebase.default.html">default</a>
+				</li>
+				<li>
+					<a href="../modules/firebase.default.database.html">database</a>
+				</li>
+				<li>
+					<a href="firebase.default.database.datasnapshot.html">DataSnapshot</a>
+				</li>
+			</ul>
+			<h1>Interface DataSnapshot</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>A <code>DataSnapshot</code> contains data from a Database location.</p>
+					</div>
+					<p>Any time you read data from the Database, you receive the data as a
+						<code>DataSnapshot</code>. A <code>DataSnapshot</code> is passed to the event callbacks you attach
+						with <code>on()</code> or <code>once()</code>. You can extract the contents of the snapshot as a
+						JavaScript object by calling the <code>val()</code> method. Alternatively, you can
+						traverse into the snapshot by calling <code>child()</code> to return child snapshots
+					(which you could then call <code>val()</code> on).</p>
+					<p>A <code>DataSnapshot</code> is an efficiently generated, immutable copy of the data at
+						a Database location. It cannot be modified and will never change (to modify
+					data, you always call the <code>set()</code> method on a <code>Reference</code> directly).</p>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">DataSnapshot</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#key" class="tsd-kind-icon">key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#ref" class="tsd-kind-icon">ref</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section tsd-is-external">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#child" class="tsd-kind-icon">child</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#exists" class="tsd-kind-icon">exists</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#exportval" class="tsd-kind-icon">export<wbr>Val</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#getpriority" class="tsd-kind-icon">get<wbr>Priority</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#haschild" class="tsd-kind-icon">has<wbr>Child</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#haschildren" class="tsd-kind-icon">has<wbr>Children</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#numchildren" class="tsd-kind-icon">num<wbr>Children</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#tojson" class="tsd-kind-icon">toJSON</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-external"><a href="firebase.default.database.datasnapshot.html#val" class="tsd-kind-icon">val</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="key" class="tsd-anchor"></a>
+					<h3>key</h3>
+					<div class="tsd-signature tsd-kind-icon">key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/firebase/index.d.ts:4882</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The key (last part of the path) of the location of this <code>DataSnapshot</code>.</p>
+						</div>
+						<p>The last token in a Database location is considered its key. For example,
+							&quot;ada&quot; is the key for the /users/ada/ node. Accessing the key on any
+							<code>DataSnapshot</code> will return the key for the location that generated it.
+						However, accessing the key on the root URL of a Database will return <code>null</code>.</p>
+						<dl class="tsd-comment-tags">
+							<dt>example</dt>
+							<dd><pre><code class="language-javascript"><span style="color: #008000">// Assume we have the following data in the Database:</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Lovelace&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users/ada&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">key</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #001080">key</span><span style="color: #000000">; </span><span style="color: #008000">// &quot;ada&quot;</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">childKey</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name/last&quot;</span><span style="color: #000000">).</span><span style="color: #001080">key</span><span style="color: #000000">; </span><span style="color: #008000">// &quot;last&quot;</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+							</dd>
+							<dt>example</dt>
+							<dd><pre><code class="language-javascript"><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">rootRef</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">();</span>
+<span style="color: #001080">rootRef</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">key</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #001080">key</span><span style="color: #000000">; </span><span style="color: #008000">// null</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">childKey</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users/ada&quot;</span><span style="color: #000000">).</span><span style="color: #001080">key</span><span style="color: #000000">; </span><span style="color: #008000">// &quot;ada&quot;</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+							</dd>
+						</dl>
+					</div>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+					<a name="ref" class="tsd-anchor"></a>
+					<h3>ref</h3>
+					<div class="tsd-signature tsd-kind-icon">ref<span class="tsd-signature-symbol">:</span> <a href="firebase.default.database.reference.html" class="tsd-signature-type" data-tsd-kind="Interface">Reference</a></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in node_modules/firebase/index.d.ts:4947</li>
+						</ul>
+					</aside>
+					<div class="tsd-comment tsd-typography">
+						<div class="lead">
+							<p>The <code>Reference</code> for the location that generated this <code>DataSnapshot</code>.</p>
+						</div>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group tsd-is-external">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="child" class="tsd-anchor"></a>
+					<h3>child</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">child<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="firebase.default.database.datasnapshot.html" class="tsd-signature-type" data-tsd-kind="Interface">DataSnapshot</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4670</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets another <code>DataSnapshot</code> for the location at the specified relative path.</p>
+								</div>
+								<p>Passing a relative path to the <code>child()</code> method of a DataSnapshot returns
+									another <code>DataSnapshot</code> for the location at the specified relative path. The
+									relative path can either be a simple child name (for example, &quot;ada&quot;) or a
+									deeper, slash-separated path (for example, &quot;ada/name/first&quot;). If the child
+									location has no data, an empty <code>DataSnapshot</code> (that is, a <code>DataSnapshot</code>
+								whose value is <code>null</code>) is returned.</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Assume we have the following data in the Database:</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Lovelace&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// Test for the existence of certain keys within a DataSnapshot</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users/ada&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">name</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">val</span><span style="color: #000000">(); </span><span style="color: #008000">// {first:&quot;Ada&quot;,last:&quot;Lovelace&quot;}</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">firstName</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name/first&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">val</span><span style="color: #000000">(); </span><span style="color: #008000">// &quot;Ada&quot;</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">lastName</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">val</span><span style="color: #000000">(); </span><span style="color: #008000">// &quot;Lovelace&quot;</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">age</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;age&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">val</span><span style="color: #000000">(); </span><span style="color: #008000">// null</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A relative path to the location of child data.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="firebase.default.database.datasnapshot.html" class="tsd-signature-type" data-tsd-kind="Interface">DataSnapshot</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="exists" class="tsd-anchor"></a>
+					<h3>exists</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">exists<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4696</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if this <code>DataSnapshot</code> contains any data. It is slightly more
+									efficient than using <code>snapshot.val() !== null</code>.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Assume we have the following data in the Database:</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Lovelace&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// Test for the existence of certain keys within a DataSnapshot</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users/ada&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">a</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">exists</span><span style="color: #000000">();  </span><span style="color: #008000">// true</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">b</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">exists</span><span style="color: #000000">(); </span><span style="color: #008000">// true</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">c</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name/first&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">exists</span><span style="color: #000000">(); </span><span style="color: #008000">// true</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">d</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name/middle&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">exists</span><span style="color: #000000">(); </span><span style="color: #008000">// false</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="exportval" class="tsd-anchor"></a>
+					<h3>export<wbr>Val</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">export<wbr>Val<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4706</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Exports the entire contents of the DataSnapshot as a JavaScript object.</p>
+								</div>
+								<p>The <code>exportVal()</code> method is similar to <code>val()</code>, except priority information
+								is included (if available), making it suitable for backing up your data.</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>The DataSnapshot&#39;s contents as a JavaScript value (Object,
+							Array, string, number, boolean, or <code>null</code>).</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="foreach" class="tsd-anchor"></a>
+					<h3>for<wbr>Each</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="firebase.default.database.datasnapshot.html" class="tsd-signature-type" data-tsd-kind="Interface">DataSnapshot</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4774</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Enumerates the top-level children in the <code>DataSnapshot</code>.</p>
+								</div>
+								<p>Because of the way JavaScript objects work, the ordering of data in the
+									JavaScript object returned by <code>val()</code> is not guaranteed to match the ordering
+									on the server nor the ordering of <code>child_added</code> events. That is where
+									<code>forEach()</code> comes in handy. It guarantees the children of a <code>DataSnapshot</code>
+								will be iterated in their query order.</p>
+								<p>If no explicit <code>orderBy*()</code> method is used, results are returned
+									ordered by key (unless priorities are used, in which case, results are
+								returned by priority).</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Assume we have the following data in the Database:</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;users&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;ada&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Lovelace&quot;</span>
+<span style="color: #000000">    },</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;alan&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Alan&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Turing&quot;</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// Loop through users in order with the forEach() method. The callback</span>
+<span style="color: #008000">// provided to forEach() will be called synchronously with a DataSnapshot</span>
+<span style="color: #008000">// for each child:</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">query</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">orderByKey</span><span style="color: #000000">();</span>
+<span style="color: #001080">query</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">forEach</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">childSnapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #008000">// key will be &quot;ada&quot; the first time and &quot;alan&quot; the second time</span>
+<span style="color: #000000">      </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">key</span><span style="color: #000000"> = </span><span style="color: #001080">childSnapshot</span><span style="color: #000000">.</span><span style="color: #001080">key</span><span style="color: #000000">;</span>
+<span style="color: #000000">      </span><span style="color: #008000">// childData will be the actual contents of the child</span>
+<span style="color: #000000">      </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">childData</span><span style="color: #000000"> = </span><span style="color: #001080">childSnapshot</span><span style="color: #000000">.</span><span style="color: #795E26">val</span><span style="color: #000000">();</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">});</span>
+</code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// You can cancel the enumeration at any point by having your callback</span>
+<span style="color: #008000">// function return true. For example, the following code sample will only</span>
+<span style="color: #008000">// fire the callback function one time:</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">query</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">orderByKey</span><span style="color: #000000">();</span>
+<span style="color: #001080">query</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">forEach</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">childSnapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">key</span><span style="color: #000000"> = </span><span style="color: #001080">childSnapshot</span><span style="color: #000000">.</span><span style="color: #001080">key</span><span style="color: #000000">; </span><span style="color: #008000">// &quot;ada&quot;</span>
+
+<span style="color: #000000">      </span><span style="color: #008000">// Cancel enumeration</span>
+<span style="color: #000000">      </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #0000FF">true</span><span style="color: #000000">;</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">});</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>action: <span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="firebase.default.database.datasnapshot.html" class="tsd-signature-type" data-tsd-kind="Interface">DataSnapshot</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A function
+											that will be called for each child DataSnapshot. The callback can return
+										true to cancel further enumeration.</p>
+									</div>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-signature">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-external">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="firebase.default.database.datasnapshot.html" class="tsd-signature-type" data-tsd-kind="Interface">DataSnapshot</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>a: <a href="firebase.default.database.datasnapshot.html" class="tsd-signature-type" data-tsd-kind="Interface">DataSnapshot</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if enumeration was canceled due to your callback
+							returning true.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="getpriority" class="tsd-anchor"></a>
+					<h3>get<wbr>Priority</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Priority<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4786</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Gets the priority value of the data in this <code>DataSnapshot</code>.</p>
+								</div>
+								<p>Applications need not use priority but can order collections by
+									ordinary properties (see
+								<a href="https://firebase.google.com/docs/database/web/lists-of-data#sorting_and_filtering_data" class="external">Sorting and filtering data</a>).</p>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="haschild" class="tsd-anchor"></a>
+					<h3>has<wbr>Child</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Child<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4813</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns true if the specified child path has (non-null) data.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Assume we have the following data in the Database:</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Lovelace&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// Determine which child keys in DataSnapshot have data.</span>
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users/ada&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">hasName</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">hasChild</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">); </span><span style="color: #008000">// true</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">hasAge</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">hasChild</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;age&quot;</span><span style="color: #000000">); </span><span style="color: #008000">// false</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>path: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>A relative path to the location of a potential child.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p><code>true</code> if data exists at the specified child path; else
+							<code>false</code>.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="haschildren" class="tsd-anchor"></a>
+					<h3>has<wbr>Children</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>Children<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4845</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns whether or not the <code>DataSnapshot</code> has any non-<code>null</code> child
+									properties.</p>
+								</div>
+								<p>You can use <code>hasChildren()</code> to determine if a <code>DataSnapshot</code> has any
+									children. If it does, you can enumerate them using <code>forEach()</code>. If it
+									doesn&#39;t, then either this snapshot contains a primitive value (which can be
+									retrieved with <code>val()</code>) or it is empty (in which case, <code>val()</code> will return
+								<code>null</code>).</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Assume we have the following data in the Database:</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Lovelace&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users/ada&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">a</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">hasChildren</span><span style="color: #000000">(); </span><span style="color: #008000">// true</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">b</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">hasChildren</span><span style="color: #000000">(); </span><span style="color: #008000">// true</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">c</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name/first&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">hasChildren</span><span style="color: #000000">(); </span><span style="color: #008000">// false</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+							<p>true if this snapshot has any children; else false.</p>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="numchildren" class="tsd-anchor"></a>
+					<h3>num<wbr>Children</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">num<wbr>Children<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4905</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns the number of child properties of this <code>DataSnapshot</code>.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Assume we have the following data in the Database:</span>
+<span style="color: #000000">{</span>
+<span style="color: #000000">  </span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">: {</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;first&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #A31515">&quot;last&quot;</span><span style="color: #001080">:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Lovelace&quot;</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000"> = </span><span style="color: #001080">firebase</span><span style="color: #000000">.</span><span style="color: #795E26">database</span><span style="color: #000000">().</span><span style="color: #795E26">ref</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;users/ada&quot;</span><span style="color: #000000">);</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">a</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">numChildren</span><span style="color: #000000">(); </span><span style="color: #008000">// 1 (&quot;name&quot;)</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">b</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">numChildren</span><span style="color: #000000">(); </span><span style="color: #008000">// 2 (&quot;first&quot;, &quot;last&quot;)</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">c</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">child</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;name/first&quot;</span><span style="color: #000000">).</span><span style="color: #795E26">numChildren</span><span style="color: #000000">(); </span><span style="color: #008000">// 0</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="tojson" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Object</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4951</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Returns a JSON-serializable representation of this object.</p>
+								</div>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Object</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+					<a name="val" class="tsd-anchor"></a>
+					<h3>val</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+						<li class="tsd-signature tsd-kind-icon">val<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in node_modules/firebase/index.d.ts:4943</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Extracts a JavaScript value from a <code>DataSnapshot</code>.</p>
+								</div>
+								<p>Depending on the data in a <code>DataSnapshot</code>, the <code>val()</code> method may return a
+									scalar type (string, number, or boolean), an array, or an object. It may also
+								return null, indicating that the <code>DataSnapshot</code> is empty (contains no data).</p>
+								<dl class="tsd-comment-tags">
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Write and then read back a string from the Database.</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">set</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;hello&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">data</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">val</span><span style="color: #000000">(); </span><span style="color: #008000">// data === &quot;hello&quot;</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+									</dd>
+									<dt>example</dt>
+									<dd><pre><code class="language-javascript"><span style="color: #008000">// Write and then read back a JavaScript object from the Database.</span>
+<span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">set</span><span style="color: #000000">({ </span><span style="color: #001080">name:</span><span style="color: #000000"> </span><span style="color: #A31515">&quot;Ada&quot;</span><span style="color: #000000">, </span><span style="color: #001080">age:</span><span style="color: #000000"> </span><span style="color: #098658">36</span><span style="color: #000000"> })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">() {</span>
+<span style="color: #000000">   </span><span style="color: #AF00DB">return</span><span style="color: #000000"> </span><span style="color: #001080">ref</span><span style="color: #000000">.</span><span style="color: #795E26">once</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;value&quot;</span><span style="color: #000000">);</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">then</span><span style="color: #000000">(</span><span style="color: #0000FF">function</span><span style="color: #000000">(</span><span style="color: #001080">snapshot</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">var</span><span style="color: #000000"> </span><span style="color: #001080">data</span><span style="color: #000000"> = </span><span style="color: #001080">snapshot</span><span style="color: #000000">.</span><span style="color: #795E26">val</span><span style="color: #000000">();</span>
+<span style="color: #000000">    </span><span style="color: #008000">// data is { &quot;name&quot;: &quot;Ada&quot;, &quot;age&quot;: 36 }</span>
+<span style="color: #000000">    </span><span style="color: #008000">// data.name === &quot;Ada&quot;</span>
+<span style="color: #000000">    </span><span style="color: #008000">// data.age === 36</span>
+<span style="color: #000000">  });</span>
+</code></pre>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>The DataSnapshot&#39;s contents as a JavaScript value (Object,
+							Array, string, number, boolean, or <code>null</code>).</p>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Exports</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="../modules/firebase.html">firebase</a>
+						<ul>
+							<li class="current tsd-kind-namespace tsd-parent-kind-module tsd-is-external">
+								<a href="../modules/firebase.default.html">default</a>
+								<ul>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.analytics.html">analytics</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.app.html">app</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.auth.html">auth</a>
+									</li>
+									<li class="current tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.database.html">database</a>
+										<ul>
+											<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+												<a href="../modules/firebase.default.database.servervalue.html">Server<wbr>Value</a>
+											</li>
+										</ul>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.firestore.html">firestore</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.functions.html">functions</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.installations.html">installations</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.messaging.html">messaging</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.performance.html">performance</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.remoteconfig.html">remote<wbr>Config</a>
+									</li>
+									<li class=" tsd-kind-namespace tsd-parent-kind-namespace tsd-is-external">
+										<a href="../modules/firebase.default.storage.html">storage</a>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="firebase.default.database.datasnapshot.html" class="tsd-kind-icon">Data<wbr>Snapshot</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#key" class="tsd-kind-icon">key</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#ref" class="tsd-kind-icon">ref</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#child" class="tsd-kind-icon">child</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#exists" class="tsd-kind-icon">exists</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#exportval" class="tsd-kind-icon">export<wbr>Val</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#foreach" class="tsd-kind-icon">for<wbr>Each</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#getpriority" class="tsd-kind-icon">get<wbr>Priority</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#haschild" class="tsd-kind-icon">has<wbr>Child</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#haschildren" class="tsd-kind-icon">has<wbr>Children</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#numchildren" class="tsd-kind-icon">num<wbr>Children</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#tojson" class="tsd-kind-icon">toJSON</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-external">
+								<a href="firebase.default.database.datasnapshot.html#val" class="tsd-kind-icon">val</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="firebase.default.database.database.html" class="tsd-kind-icon">Database</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="firebase.default.database.ondisconnect.html" class="tsd-kind-icon">On<wbr>Disconnect</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="firebase.default.database.query.html" class="tsd-kind-icon">Query</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="firebase.default.database.reference.html" class="tsd-kind-icon">Reference</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-namespace tsd-is-external">
+						<a href="firebase.default.database.thenablereference.html" class="tsd-kind-icon">Thenable<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-namespace tsd-is-external">
+						<a href="../modules/firebase.default.database.html#eventtype" class="tsd-kind-icon">Event<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-namespace tsd-is-external">
+						<a href="../modules/firebase.default.database.html#enablelogging" class="tsd-kind-icon">enable<wbr>Logging</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -9,16 +9,12 @@ import Button from "moviepicker/components/Button/Button";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import Screen from "moviepicker/components/Screen/Screen";
 import { UnauthorizedNavigationStack } from "moviepicker/navigation/Navigation.types";
-import authMethods from "moviepicker/reduxStore/auth/auth.methods";
-import authSelectors from "moviepicker/reduxStore/auth/auth.selectors";
-import { IError, IReduxState } from "moviepicker/reduxStore/store.types";
 import Utils from "moviepicker/utils/index";
 import { SafeAreaView } from "react-native";
-import { connect } from "react-redux";
 
 import * as Style from "./LandingScreen.style";
 
-interface Props extends IStateProps, IDispatchProps {
+interface Props {
   route: RouteProp<UnauthorizedNavigationStack, "Landing">;
   navigation: StackNavigationProp<UnauthorizedNavigationStack, "Landing">;
 }
@@ -37,7 +33,6 @@ const LandingScreen: React.FC<Props> = (props) => {
       <Screen
         header={{ hide: true, color: "primary" }}
         transparentBackground={true}
-        showLoadingIndicator={props.isLoginGoogleLoading}
         loadingText="Logging in..."
       >
         <Box flex={1} justifyContent="center" alignItems="center">
@@ -85,20 +80,5 @@ const LandingScreen: React.FC<Props> = (props) => {
   );
 };
 
-interface IStateProps {
-  isLoginGoogleLoading?: boolean;
-  loginGoogleError?: IError;
-}
-const mapStateToProps = (state: IReduxState): IStateProps => ({
-  isLoginGoogleLoading: authSelectors.loginGoogleStateSelector.isLoading(state),
-  loginGoogleError: authSelectors.loginGoogleStateSelector.error(state),
-});
 
-interface IDispatchProps {
-  loginGoogle: () => void;
-}
-const mapDispatchToProps: IDispatchProps = {
-  loginGoogle: authMethods.loginGoogle,
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(LandingScreen);
+export default LandingScreen;

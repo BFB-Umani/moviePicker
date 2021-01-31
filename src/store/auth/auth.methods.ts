@@ -39,7 +39,7 @@ const formatFirebaseErrors = (errorCode: string) => {
 /**
  * checks if user is logged in
  */
-const checkAuthenticationState = () => async (
+export const checkAuthenticationState = () => async (
   dispatch: Dispatch,
   getState: () => IReduxState
 ) => {
@@ -61,7 +61,7 @@ const checkAuthenticationState = () => async (
  * log the user in to the app using credentials
  * @param credentials 
  */
-const loginCredentials = (credentials: ILoginCredentials) => async (
+export const loginCredentials = (credentials: ILoginCredentials) => async (
   dispatch: Dispatch
 ) => {
   try {
@@ -105,7 +105,7 @@ const loginCredentials = (credentials: ILoginCredentials) => async (
 /**
  * log the user out from the application and resets the different states used
  */
-const logout = () => async (dispatch: Dispatch) => {
+export const logout = () => async (dispatch: Dispatch) => {
   try {
     await firebaseAuth.signOut();
     dispatch(userReduxSlice.actions.resetState());
@@ -127,7 +127,7 @@ const logout = () => async (dispatch: Dispatch) => {
  * Sends user an email to reset their password using built in firebase function
  * @param email 
  */
-const requestResetPassword = (email: string) => async (dispatch: Dispatch) => {
+export const requestResetPassword = (email: string) => async (dispatch: Dispatch) => {
   try {
     addRequestState({
       name: "requestResetPassword",
@@ -151,7 +151,7 @@ const requestResetPassword = (email: string) => async (dispatch: Dispatch) => {
  * creates an user account connected to firebase and then creates a user profile connected to the credentials given by the user
  * @param fields 
  */
-const signup = (fields: ISignupFields) => async (dispatch: Dispatch, getState: () => IReduxState) => {
+export const signup = (fields: ISignupFields) => async (dispatch: Dispatch, getState: () => IReduxState) => {
   try {
     // Make sure we have the necessary data
     if (!fields.email) {
