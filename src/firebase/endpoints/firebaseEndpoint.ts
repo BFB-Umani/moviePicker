@@ -15,13 +15,15 @@ export const getSearchResults = async (searchData) => {
   const searchResults: IMovie[] = [];
 
   for (let doc of resultObject.results) {
-    searchResults.push({
-      id: doc.id.toString(),
-      poster_path: "https://image.tmdb.org/t/p/w500" + doc.poster_path,
-      title: doc.title,
-      release_date: doc.release_date,
-      vote_average: doc.vote_average,
-    });
+    if(doc.release_date) {
+      searchResults.push({
+        id: doc.id.toString(),
+        poster_path: "https://image.tmdb.org/t/p/w500" + doc.poster_path,
+        title: doc.title,
+        release_date: doc.release_date.substring(0,4),
+        vote_average: doc.vote_average,
+      });
+    } 
   }
   return searchResults;
 };
@@ -130,7 +132,6 @@ export const getListsByContributer = async (id: string) => {
       }
     }
   }
-  console.log(movieLists)
   return movieLists;
 };
 

@@ -6,6 +6,7 @@ import { IMovie } from "moviepicker/reduxStore/store.types";
 import React from "react";
 import { RefreshControl, FlatList, TouchableOpacity, } from "react-native";
 import SearchImage from "moviepicker/components/SearchImage/SearchImage";
+import { array } from "yup/lib/locale";
 
 interface Props {
   results: IMovie[];
@@ -26,6 +27,7 @@ const CompetitionList: React.FC<Props> = (props) => {
           <Box flex={1} alignItems="center">
             <SearchImage imageUrl={results.poster_path} onPress={() => props.onSelectMovie(results)}/>
             <ContentText type="h1" color="text">{results.title}</ContentText>
+            <ContentText type="h1" color="text">({results.release_date})</ContentText>
             <Box margintop="xxs" flexDirection="row" alignItems="center">
               <Icon icon="star" marginright="xxs" color="gold" size="xxs" />
               <ContentText type="description" color="disabled">

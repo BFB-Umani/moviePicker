@@ -23,6 +23,7 @@ const MovieList: React.FC<Props> = (props) => {
           <Box flex={1} alignItems="center">
             <SearchImage imageUrl={results.poster_path} activeOpacity={1}/>
             <ContentText type="h1" color="text">{results.title}</ContentText>
+            <ContentText type="h1" color="text">({results.release_date})</ContentText>
             <Box margintop="xxs" flexDirection="row" alignItems="center">
               <Icon icon="star" marginright="xxs" color="gold" size="xxs" />
               <ContentText type="description" color="disabled">

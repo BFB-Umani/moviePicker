@@ -13,6 +13,7 @@ import { Modalize } from "react-native-modalize";
 import { Portal } from "react-native-portalize";
 import Button from "moviepicker/components/Button/Button";
 import ContentText from "moviepicker/components/ContentText/ContentText";
+import Icon from "moviepicker/components/Icon/Icon";
 import SearchImage from "moviepicker/components/SearchImage/SearchImage";
 
 import MovieList from "./MovieList/MovieList";
@@ -26,12 +27,16 @@ IStateProps &
 
   const modalizeRef = useRef<Modalize>(null);
   const [searchImageSrc, setsearchImageSrc] = useState(".jpg");
-  const [movieName, setmovieName] = useState("placeholder");
+  const [movieName, setMovieName] = useState("placeholder");
+  const [realeaseDate, setRealeaseDate] = useState("placeholder");
+  const [voteAverage, setVoteAverage] = useState("placeholder");
 
   const onGiveRandomMovie = () => {
     const rn = Math.floor(Math.random() * props.movies.length);
     const result = props.movies[rn];
-    setmovieName(result.title)
+    setMovieName(result.title);
+    setRealeaseDate(result.release_date);
+    setVoteAverage(result.vote_average);
     setsearchImageSrc(result.poster_path);
     modalizeRef.current?.open();
   };
@@ -59,14 +64,26 @@ IStateProps &
           <Box padding="sm" color="general" paddingbottom="xlg">
             <ContentText
               type="h3"
-              marginbottom="md"
               color="text"
               textalign="center"
+              marginbottom="md"
             >
-              Tonight you'll watch {movieName}!
+              Tonight you'll watch:
             </ContentText>
             <Box alignItems="center" marginbottom="sm">
               <SearchImage imageUrl={searchImageSrc}/>
+            </Box>
+            <ContentText type="h3" color="text" textalign="center">
+              {movieName}!
+            </ContentText>
+            <ContentText type="h4" color="text" textalign="center">
+              ({realeaseDate})
+            </ContentText>
+            <Box margintop="xxs" flexDirection="row" alignItems="center" justifyContent="center">
+              <Icon icon="star" marginright="xxs" color="gold" size="xxs" />
+              <ContentText type="description" color="disabled">
+                  {voteAverage}
+              </ContentText>
             </Box>
           </Box>
         </Modalize>
