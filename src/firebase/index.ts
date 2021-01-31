@@ -27,8 +27,6 @@ export const firestore = firebase.firestore();
 export const firebaseAuth = firebase.auth();
 export const firebaseStorage = firebase.storage();
 export const firebaseCollections: { [key in FirebaseCollections]: string } = {
-  categories: "categories",
-  movies: "movies",
   movie_lists: "movie_lists",
   user_accounts: "user_accounts",
   creators: "creators",

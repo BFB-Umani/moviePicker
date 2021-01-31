@@ -42,7 +42,8 @@ IDispatchProps &
 > = (props) => {
 
   /**
-   * gets all movieLists connected to logged in user and adds them to the state
+   * gets all movieLists connected to logged in user and adds them to the state'
+   * the useState activates when the value for userProfile (currently logged in user) changes
   */
   useEffect(() => {
     if (props.userProfile) {
@@ -139,7 +140,7 @@ IDispatchProps &
                 errorMessage={errors.search?.message}
               />
             )}
-            name="searchValue"
+            name="search"
             defaultValue=""
           />
         </Box>

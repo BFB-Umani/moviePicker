@@ -13,6 +13,7 @@ import { IProfileStack } from "moviepicker/navigation/Navigation.types";
 import authMethods from "moviepicker/reduxStore/auth/auth.methods";
 import { IReduxState, IUserProfile } from "moviepicker/reduxStore/store.types";
 import userSelectors from "moviepicker/reduxStore/user/user.selectors";
+import Utils from "moviepicker/utils/index";
 import { connect } from "react-redux";
 
 import * as Style from "./ProfileScreen.style";
@@ -23,8 +24,8 @@ interface Props extends IStateProps, IDispatchProps {
 }
 
 const ProfileScreen: React.FC<Props> = (props) => {
-  const navigateToSettings = () => {
-    props.navigation.navigate("UserSettings");
+  const navigateToEditProfile = () => {
+    props.navigation.navigate("EditProfile");
   };
 
   return (
@@ -71,14 +72,42 @@ const ProfileScreen: React.FC<Props> = (props) => {
             <List
               items={[
                 {
-                  label: "Settings",
+                  label: "Edit profile",
                   iconLeft: "cog",
                   iconRight: "chevron-right",
                   color: "text",
-                  onPress: navigateToSettings,
+                  onPress: navigateToEditProfile,
                 },
               ]}
             />
+            <Separator size="lg" color="panel" />
+            <List
+              items={[
+                {
+                  label: "Log Out",
+                  color: "danger",
+                  iconRight: "sign-out-alt",
+                  onPress: props.logout,
+                },
+              ]}
+            />
+            <Separator size="lg" color="panel" />
+            <ContentText
+              type="fineprint"
+              textalign="center"
+              margintop="lg"
+              color="disabled"
+            >
+              MOVIEPICKER
+            </ContentText>
+            <ContentText
+              type="description"
+              textalign="center"
+              marginbottom="lg"
+              color="disabled"
+            >
+              v{Utils.getAppVersion()}
+            </ContentText>
           </Box>
         )}
         {!props.userProfile && (

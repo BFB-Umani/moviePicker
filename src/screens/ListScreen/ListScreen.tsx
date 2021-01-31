@@ -50,24 +50,36 @@ IDispatchProps &
       }),
     []
   );
-
-  const createList = () => {
-    modalizeRef.current?.open();
-  } 
-
-  const onSelectList = async (result: IMovieList) => {
-    props.fetchMovies(result.id)
-    props.navigation.navigate("MovieList")
-  };
-
   const { control, handleSubmit, errors, formState } = useForm<IMovieList>({
     mode: "onChange",
     resolver: yupResolver(validationSchema),
     shouldUnregister: true,
   });
 
+  /**
+   * opens modal with input fields for user to fill
+   */
+  const createList = () => {
+    modalizeRef.current?.open();
+  } 
+
+  /**
+   * takes user to new screen with all the movies that is in the selected list
+   * @param result 
+   */
+  const onSelectList = async (result: IMovieList) => {
+    props.fetchMovies(result.id)
+    props.navigation.navigate("MovieList")
+  };
+
+  /**
+   * takes data from user and sends it to dispatch methods for creating a new list
+   * @param data 
+   */
   const onSubmit = async (data: INewMovieList) => {
-    data.creatorId = props.userProfile?.id ? props.userProfile?.id : "0";
+    if(props.userProfile) {
+      data.creatorId = props.userProfile?.id;
+    }
     const contributerIds = await fetchUserByEmail(data.contributerId);
     data.contributerId = contributerIds.idArray;
     await props.createList(data);
@@ -78,7 +90,7 @@ IDispatchProps &
   };
 
   /*
-  * takes contriubter emails and returns userID values
+  * takes contriubter emails and returns the userID values connected
   * */
   const fetchUserByEmail = async (ids) => {
     let idArray: string[] = [];

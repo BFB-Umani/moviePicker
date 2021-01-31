@@ -116,7 +116,7 @@ const EditProfileScreen: React.FC<
           withHandle={false}
           adjustToContentHeight={true}
         >
-          <Box padding="sm" marginbottom="md">
+          <Box padding="sm"  color="general">
             <ContentText
               type="h3"
               marginbottom="md"
@@ -140,6 +140,7 @@ const EditProfileScreen: React.FC<
               hollow={true}
               iconLeft="images"
               margintop="md"
+              marginbottom="md"
               onPress={onOpenCameraRoll}
             />
           </Box>
@@ -284,15 +285,11 @@ interface IDispatchProps {
   updateProfile: (fields: IUserProfile) => void;
   toggleCameraToUpdateAvatar: () => void;
   openCameraRollToUpdateAvatar: () => void;
-  createModal: (modal: IModal) => void;
-  closeModal: (id: IModal["id"]) => void;
 }
 const mapDispatchToProps: IDispatchProps = {
   updateProfile: userMethods.updateUserProfile,
   toggleCameraToUpdateAvatar: userMethods.toggleCameraToUpdateAvatar,
   openCameraRollToUpdateAvatar: userMethods.openCameraRollToUpdateAvatar,
-  createModal: modalMethods.createModal,
-  closeModal: modalMethods.closeModal,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(EditProfileScreen);

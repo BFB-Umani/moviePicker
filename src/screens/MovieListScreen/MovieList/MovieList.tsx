@@ -3,7 +3,7 @@ import ContentText from "moviepicker/components/ContentText/ContentText";
 import Icon from "moviepicker/components/Icon/Icon";
 import { IMovie } from "moviepicker/reduxStore/store.types";
 import React from "react";
-import { RefreshControl, FlatList, TouchableOpacity, } from "react-native";
+import { RefreshControl, FlatList, } from "react-native";
 import SearchImage from "moviepicker/components/SearchImage/SearchImage";
 
 interface Props {

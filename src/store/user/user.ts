@@ -3,7 +3,6 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import {
   IEditUserProfile,
   IError,
-  IUserLocation,
   IUserProfile,
 } from "../store.types";
 import { IUserReduxState } from "./user.types";
@@ -38,9 +37,6 @@ export const userReduxSlice = createSlice({
             avatarUrl: action.payload,
           }
         : undefined;
-    },
-    updateLocation: (state, action: PayloadAction<IUserLocation>) => {
-      state.location.data = action.payload;
     },
     setGranted: (state, action: PayloadAction<boolean>) => {
       state.location.granted = action.payload;

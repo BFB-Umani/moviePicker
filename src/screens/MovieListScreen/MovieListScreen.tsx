@@ -26,18 +26,15 @@ IStateProps &
 > = (props) => {
 
   const modalizeRef = useRef<Modalize>(null);
-  const [searchImageSrc, setsearchImageSrc] = useState(".jpg");
-  const [movieName, setMovieName] = useState("placeholder");
-  const [realeaseDate, setRealeaseDate] = useState("placeholder");
-  const [voteAverage, setVoteAverage] = useState("placeholder");
+  const [selectedMovie, setSelectedMovie] = useState<IMovie>();
 
+  /**
+   * creates a random number in a range of the length of movieList and sends data of a random movie to Modal that shows to the user
+   */
   const onGiveRandomMovie = () => {
     const rn = Math.floor(Math.random() * props.movies.length);
     const result = props.movies[rn];
-    setMovieName(result.title);
-    setRealeaseDate(result.release_date);
-    setVoteAverage(result.vote_average);
-    setsearchImageSrc(result.poster_path);
+    setSelectedMovie(result);
     modalizeRef.current?.open();
   };
 
@@ -71,18 +68,18 @@ IStateProps &
               Tonight you'll watch:
             </ContentText>
             <Box alignItems="center" marginbottom="sm">
-              <SearchImage imageUrl={searchImageSrc}/>
+              <SearchImage imageUrl={selectedMovie?.poster_path}/>
             </Box>
             <ContentText type="h3" color="text" textalign="center">
-              {movieName}!
+              {selectedMovie?.title}
             </ContentText>
             <ContentText type="h4" color="text" textalign="center">
-              ({realeaseDate})
+              ({selectedMovie?.release_date})
             </ContentText>
             <Box margintop="xxs" flexDirection="row" alignItems="center" justifyContent="center">
               <Icon icon="star" marginright="xxs" color="gold" size="xxs" />
               <ContentText type="description" color="disabled">
-                  {voteAverage}
+                  {selectedMovie?.vote_average}
               </ContentText>
             </Box>
           </Box>

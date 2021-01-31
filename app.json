@@ -2,7 +2,7 @@
   "expo": {
     "name": "moviePicker",
     "slug": "moviePicker",
-    "version": "1.0.0",
+    "version": "1",
     "privacy": "unlisted",
     "platforms": [
       "ios",
@@ -22,7 +22,8 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "buildNumber": "1"
     },
     "hooks": {
       "postPublish": [
@@ -37,7 +38,9 @@
       ]
     },
     "android": {
-      "package": "com.movieBuffs.Moviepicker"
+      "package": "com.movieBuffs.Moviepicker",
+      "versionCode": 1,
+      "googleServicesFile": "./google-services.json",
     }
   }
 }

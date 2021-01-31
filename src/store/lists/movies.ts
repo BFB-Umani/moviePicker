@@ -9,6 +9,7 @@ export const moviesReduxSlice = createSlice({
     name: "movies",
     initialState,
     reducers: {
+      resetState: () => initialState,
       fetchMoviesSuccess: (
         state,
         action: PayloadAction<IMovie[]>

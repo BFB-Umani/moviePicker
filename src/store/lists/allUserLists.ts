@@ -9,6 +9,7 @@ export const allUserListsReduxSlice = createSlice({
   name: "allUserLists",
   initialState,
   reducers: {
+    resetState: () => initialState,
     fetchAllUserListsSuccess: (
     state,
     action: PayloadAction<IMovieList[]>

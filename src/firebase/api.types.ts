@@ -1,11 +1,8 @@
 import {
   IMovie,
-  IMovieList,
-  INewMovieList
 } from "moviepicker/reduxStore/store.types";
 
 export type FirebaseCollections =
-  | "categories"
   | "movie_lists"
   | "user_accounts"
   | "creators"

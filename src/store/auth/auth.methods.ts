@@ -1,11 +1,16 @@
-import firebase, { firebaseAuth } from "moviepicker/firebase";
+import { firebaseAuth } from "moviepicker/firebase";
 import { Dispatch } from "redux";
 
 import { alertReduxSlice } from "../alert/alert";
-import alertMethods from "../alert/alert.methods";
 import { addRequestState } from "../requestState";
 import { IReduxState } from "../store.types";
 import { userReduxSlice } from "../user/user";
+
+import { allUserListsReduxSlice } from "../lists/allUserLists";
+import { contributersListReduxSlice } from "../lists/contributersList";
+import { moviesReduxSlice } from "../lists/movies";
+import { movieListReduxSlice } from "../lists/lists";
+
 import userMethods from "../user/user.methods";
 import { authReduxSlice } from "./auth";
 import { ILoginCredentials, ISignupFields } from "./auth.types";
@@ -31,6 +36,9 @@ const formatFirebaseErrors = (errorCode: string) => {
   }
 };
 
+/**
+ * checks if user is logged in
+ */
 const checkAuthenticationState = () => async (
   dispatch: Dispatch,
   getState: () => IReduxState
@@ -49,6 +57,10 @@ const checkAuthenticationState = () => async (
   });
 };
 
+/**
+ * log the user in to the app using credentials
+ * @param credentials 
+ */
 const loginCredentials = (credentials: ILoginCredentials) => async (
   dispatch: Dispatch
 ) => {
@@ -90,10 +102,17 @@ const loginCredentials = (credentials: ILoginCredentials) => async (
   }
 };
 
+/**
+ * log the user out from the application and resets the different states used
+ */
 const logout = () => async (dispatch: Dispatch) => {
   try {
     await firebaseAuth.signOut();
     dispatch(userReduxSlice.actions.resetState());
+    dispatch(allUserListsReduxSlice.actions.resetState());
+    dispatch(contributersListReduxSlice.actions.resetState());
+    dispatch(moviesReduxSlice.actions.resetState());
+    dispatch(movieListReduxSlice.actions.resetState());
     dispatch(alertReduxSlice.actions.clearAll());
   } catch (error) {
     addRequestState({
@@ -104,6 +123,10 @@ const logout = () => async (dispatch: Dispatch) => {
   }
 };
 
+/**
+ * Sends user an email to reset their password using built in firebase function
+ * @param email 
+ */
 const requestResetPassword = (email: string) => async (dispatch: Dispatch) => {
   try {
     addRequestState({
@@ -124,6 +147,10 @@ const requestResetPassword = (email: string) => async (dispatch: Dispatch) => {
   }
 };
 
+/**
+ * creates an user account connected to firebase and then creates a user profile connected to the credentials given by the user
+ * @param fields 
+ */
 const signup = (fields: ISignupFields) => async (dispatch: Dispatch, getState: () => IReduxState) => {
   try {
     // Make sure we have the necessary data

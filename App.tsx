@@ -34,8 +34,10 @@ const App = () => {
     initializeResources();
   }, []);
 
+  /**
+   * initialize Fonts from assets and use method for preventing native splash screen from autohiding
+   */
   const initializeResources = async () => {
-    // Prevent native splash screen from autohiding
     try {
       await SplashScreen.preventAutoHideAsync();
       await Font.loadAsync({

@@ -4,6 +4,10 @@ import { Dispatch } from "redux";
 import { alertReduxSlice } from "./alert";
 import alertSelectors from "./alert.selectors";
 
+/**
+ * create custom alert to show user when somthing has gone wrong in the application
+ * @param alert 
+ */
 const createAlert = (alert: IAlert) => (
   dispatch: Dispatch,
   getState: () => IReduxState

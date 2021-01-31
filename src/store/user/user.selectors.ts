@@ -43,22 +43,6 @@ const userNeedsToSetupProfileSelector = createSelector(
     !!userState.profile && !!fetchProfileError
 );
 
-// Returns the users currently known location
-const userLocationSelector = createSelector(
-  (state: IReduxState) => state.user.location,
-  (locationState) => locationState.data
-);
-// Any errors related to User Location
-const userLocationErrorSelector = createSelector(
-  (state: IReduxState) => state.user.location,
-  (locationState) => locationState.error
-);
-// Is user location granted?
-const userLocationGranted = createSelector(
-  (state: IReduxState) => state.user.location,
-  (locationState) => locationState.granted || false
-);
-
 export default {
   userProfileSelector,
   userFullnameSelector,
@@ -68,7 +52,4 @@ export default {
   uploadAvatarStateSelector,
   toggleCameraToUpdateAvatarStateSelector,
   openCameraRollToUpdateAvatarStateSelector,
-  userLocationSelector,
-  userLocationErrorSelector,
-  userLocationGranted,
 };

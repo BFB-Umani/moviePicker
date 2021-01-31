@@ -8,7 +8,7 @@ import { movieSearchReduxSlice } from "./movieSearch";
 
 
 /**
- * Search for movie title
+ * Search for movie by title
  */
 const searchMovie = (searchData: ISearchMovie) => async (
   dispatch: Dispatch,

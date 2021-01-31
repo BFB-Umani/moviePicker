@@ -35,18 +35,22 @@ IDispatchProps &
   const [selectedMovie, setSelectedMovie] = useState<IMovie>();
   const [modalVisible, setModalVisible] = useState(false);
 
+  /**
+   * opens modal with selected movie that prompts user to add movie to a list
+   * @param result 
+   */
   const onSelectMovie = (result: IMovie) => {
     if (result && result.id) {
-      selectMovie(result)
-        setsearchImageSrc(result.poster_path);
-        modalizeRef.current?.open();
+      setSelectedMovie(result);
+      setsearchImageSrc(result.poster_path);
+      modalizeRef.current?.open();
     }
   };
 
-  const selectMovie = async (result: IMovie) => {
-    setSelectedMovie(result);
-  }
-
+  /**
+   * adds selected movie to the selected list and closes all modals
+   * @param list 
+   */
   const onSelectList = (list: IMovieList) => {
     if(selectedMovie) {
       props.addMovieToList(selectedMovie, list)
@@ -55,6 +59,9 @@ IDispatchProps &
     }
   }
 
+  /**
+   * opens modal with all avaliable lists
+   */
   const openModal = () => {
     setModalVisible(true);
   }

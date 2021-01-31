@@ -4,14 +4,11 @@ import firebase, {
   firebaseCollections,
 } from "moviepicker/firebase";
 import { MoviePickerAPI } from "moviepicker/firebase/api.types";
-import Utils from "moviepicker/utils";
 import * as ImagePicker from "expo-image-picker";
-import * as Location from "expo-location";
 import * as Permissions from "expo-permissions";
 import { Alert } from "react-native";
 import { Dispatch } from "redux";
 
-import alertMethods from "../alert/alert.methods";
 import authSelectors from "../auth/auth.selectors";
 import { addRequestState } from "../requestState";
 import {
@@ -64,6 +61,10 @@ const fetchCurrentUserProfile = () => async (
   }
 };
 
+/**
+ * fetches a user profile by using the userId connected to the user
+ * @param userId 
+ */
 const fetchUserProfile = (userId: string) => async (dispatch: Dispatch) => {
   try {
     const response = await firestore
@@ -105,6 +106,10 @@ const fetchUserProfile = (userId: string) => async (dispatch: Dispatch) => {
   }
 };
 
+/**
+ * fetches a user by using the email connected to the user
+ * @param userEmail 
+ */
 export const fetchUserProfileByEmail = async (userEmail: string) => {
   try {
     let userProfileData;
@@ -221,6 +226,9 @@ const updateUserProfile = (profileData: IEditUserProfile) => async (
   }
 };
 
+/**
+ * starts mobile camera for user to upload a profile picture
+ */
 const toggleCameraToUpdateAvatar = () => async (
   dispatch: Dispatch,
   getState: () => IReduxState
@@ -258,6 +266,10 @@ const toggleCameraToUpdateAvatar = () => async (
   }
 };
 
+
+/**
+ * opens mobile camera-roll for user to upload a profile picture
+ */
 const openCameraRollToUpdateAvatar = () => async (
   dispatch: Dispatch,
   getState: () => IReduxState
@@ -295,6 +307,10 @@ const openCameraRollToUpdateAvatar = () => async (
   }
 };
 
+/**
+ * uploads chosen image from user to database connected to their user account
+ * @param imageURI 
+ */
 const uploadAvatar = (imageURI: string) => async (
   dispatch: Dispatch,
   getState: () => IReduxState

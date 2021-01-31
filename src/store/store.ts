@@ -2,7 +2,6 @@ import { createStore, combineReducers, applyMiddleware, Reducer } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
 
-import alertReducer from "./alert/alert";
 import authReducer from "./auth/auth";
 import globalReducer from "./global/global";
 import modalReducer from "./modal/modal";
@@ -22,8 +21,6 @@ const rootReducer: Reducer<IReduxState> = combineReducers<IReduxState>({
   auth: authReducer,
   user: userReducer,
   modal: modalReducer,
-  alert: alertReducer,
-  settings: settingsReducer,
   searchResult: movieSearchReducer,
   lists: listReducer,
   movieList: moviesReducer,

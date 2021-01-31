@@ -8,19 +8,19 @@ export const typography = {
 
 export type FontSize = "xxlg" | "xlg" | "lg" | "md" | "sm" | "xs" | "xxs";
 export const fontSize: { [key in FontSize]: string } = {
-  /** 20px */
+  /** 24px */
   xxlg: "24px",
   /** 20px */
   xlg: "20px",
-  /** 20px */
-  lg: "18px",
   /** 18px */
-  md: "16px",
+  lg: "18px",
   /** 16px */
-  sm: "14px",
+  md: "16px",
   /** 14px */
-  xs: "12px",
+  sm: "14px",
   /** 12px */
+  xs: "12px",
+  /** 10px */
   xxs: "10px",
 };
 export type TextAlign = "left" | "center" | "right";

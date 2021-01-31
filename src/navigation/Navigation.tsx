@@ -14,7 +14,6 @@ import LoginScreen from "moviepicker/screens/Login/LoginScreen";
 import ProfileScreen from "moviepicker/screens/Profile/ProfileScreen";
 import ResetPasswordScreen from "moviepicker/screens/ResetPassword/ResetPasswordScreen";
 import SignupScreen from "moviepicker/screens/Signup/SignupScreen";
-import UserSettingsScreen from "moviepicker/screens/UserSettings/UserSettingsScreen";
 import MovieListScreen from "moviepicker/screens/MovieListScreen/MovieListScreen";
 import ListScreen from "moviepicker/screens/ListScreen/ListScreen";
 import { Host } from "react-native-portalize";
@@ -87,7 +86,6 @@ const ProfileScreens = () => (
   <ProfileStack.Navigator>
     <ProfileStack.Screen name="Profile" component={ProfileScreen} />
     <ProfileStack.Screen name="EditProfile" component={EditProfileScreen} />
-    <ProfileStack.Screen name="UserSettings" component={UserSettingsScreen} />
   </ProfileStack.Navigator>
 );
 

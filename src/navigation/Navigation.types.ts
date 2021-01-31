@@ -26,8 +26,6 @@ export type IDashboardStack = {
 export type IProfileStack = {
   Profile: undefined;
   EditProfile: undefined;
-  MyResults: undefined;
-  UserSettings: undefined;
 };
 
 export type IMovieListStack = {
