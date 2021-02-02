@@ -85,6 +85,9 @@ IDispatchProps &
   });
 
   const onSubmit = async (data: ISearchMovie) => {
+    if(props.userProfile){
+      await props.fetchAllUserLists(props.userProfile.id);
+    }
     await props.searchMovie(data);
     if(!props.searchMovieInProgress) {
       if (!props.searchMovieError) {

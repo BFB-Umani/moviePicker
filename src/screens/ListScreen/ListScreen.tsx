@@ -36,6 +36,7 @@ IDispatchProps &
     if (props.list.length === 0 && props.userProfile) {
       props.fetchLists(props.userProfile.id);
       props.fetchContributerLists(props.userProfile.id);
+      props.fetchAllLists(props.userProfile.id);
     }
   }, []);
 
@@ -247,12 +248,14 @@ const mapStateToProps = (state: IReduxState): IStateProps => ({
 interface IDispatchProps {
   fetchMovies: (movieListId: IMovieList["id"]) => void;
   fetchLists: (userId: IUserProfile["id"]) => void;
+  fetchAllLists: (userId: IUserProfile["id"]) => void;
   fetchContributerLists: (userId: IUserProfile["id"]) => void;
   createList:  (fields: INewMovieList) => void;
 }
 const mapDispatchToProps: IDispatchProps = {
   fetchMovies: listsMethods.fetchMovies,
   fetchLists: listsMethods.fetchLists,
+  fetchAllLists: listsMethods.fetchAllUserLists,
   fetchContributerLists: listsMethods.fetchContributersLists,
   createList: listsMethods.createList,
 };

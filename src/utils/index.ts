@@ -29,7 +29,7 @@ const logError = ({
 /**
  * gets buildNumber or versionCode depending on platform Operative System
  */
-export const getBuildNumber = (): string => {
+const getBuildNumber = (): string => {
   const { android, ios } = Constants.manifest;
 
   if (Platform.OS === "android" && android) {
@@ -44,7 +44,7 @@ export const getBuildNumber = (): string => {
 /**
  * gets the current app version that is installed on your phone
  */
-export const getAppVersion = () => {
+const getAppVersion = () => {
   return `${Constants.manifest.version} (${getBuildNumber()})`;
 };
 

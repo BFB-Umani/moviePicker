@@ -40,7 +40,6 @@
     "android": {
       "package": "com.movieBuffs.Moviepicker",
       "versionCode": 2,
-      "googleServicesFile": "./google-services.json",
     }
   }
 }
