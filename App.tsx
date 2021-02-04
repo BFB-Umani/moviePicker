@@ -3,7 +3,7 @@ import React, {useEffect, useState } from "react";
 import { LogBox } from "react-native";
 
 import ReduxStore from "moviepicker/reduxStore/store";
-import MoviePicker from "./src/index";
+import Moviepicker from "./src/index";
 
 import * as SplashScreen from "expo-splash-screen";
 import * as Sentry from 'sentry-expo';
@@ -61,7 +61,7 @@ const App = () => {
 
   return (
     <Provider store={ReduxStore.store}>
-        <MoviePicker />
+        <Moviepicker />
     </Provider>
   );
 };
