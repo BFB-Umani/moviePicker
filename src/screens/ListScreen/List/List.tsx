@@ -8,6 +8,7 @@ import { RefreshControl, FlatList, TouchableOpacity, } from "react-native";
 import CreateListButton from "moviepicker/components/CreateListButton/CreateListButton";
 
 interface Props {
+  footerComponent: boolean;
   lists: IMovieList[];
   onSelectList: (results: IMovieList) => void;
   onCreateList: () => void;
@@ -35,6 +36,20 @@ const MovieList: React.FC<Props> = (props) => {
     </TouchableOpacity>
   );
 
+  const footerComponent = props.footerComponent ? (
+    <Box alignItems="center" >
+      <CreateListButton
+        size="xxxlarge"
+        type="primary"
+        hollow={false}
+        icon="plus"
+        margintop="md"
+        iconColor="general"
+        onPress={props.onCreateList}
+      />
+    </Box>
+  ) : (<></>);
+
   const resultList = props.lists;
 
   return (
@@ -50,6 +65,9 @@ const MovieList: React.FC<Props> = (props) => {
               refreshing={props.isRefreshing}
             />
           }
+          ListFooterComponent={
+            footerComponent
+          }
         />
         {!props.isRefreshing && resultList.length === 0 && (
           <Box padding="sm" alignItems="center" justifyContent="center">
@@ -62,17 +80,6 @@ const MovieList: React.FC<Props> = (props) => {
           </Box>  
         )}
       </Box>
-      <Box alignItems="center">
-              <CreateListButton
-                size="xxxlarge"
-                type="primary"
-                hollow={false}
-                icon="plus"
-                margintop="md"
-                iconColor="general"
-                onPress={props.onCreateList}
-              />
-            </Box>
     </Box>
   );
 };

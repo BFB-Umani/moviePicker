@@ -11,6 +11,7 @@ import { IReduxState, IMovie, IUserProfile, IMovieList, INewMovieList } from "mo
 import React, { useRef, useMemo, useEffect } from "react";
 import { connect } from "react-redux";
 import Button from "moviepicker/components/Button/Button";
+import CreateListButton from "moviepicker/components/CreateListButton/CreateListButton";
 import ContentText from "moviepicker/components/ContentText/ContentText";
 import InputField from "moviepicker/components/InputField/InputField";
 import Tabs from "moviepicker/components/Tabs/Tabs";
@@ -131,6 +132,7 @@ IDispatchProps &
             content: (
               <Box>
                 <List
+                  footerComponent={true}
                   lists={props.list}
                   isRefreshing={props.isFetchingLists}
                   onSelectList={onSelectList}
@@ -146,6 +148,7 @@ IDispatchProps &
             content: (
               <Box>
                 <List
+                footerComponent={false}
                   lists={props.contributersList}
                   isRefreshing={props.isFetchingLists}
                   onSelectList={onSelectList}
